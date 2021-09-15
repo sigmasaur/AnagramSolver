@@ -1,0 +1,2764 @@
+# Most of the following is based on:
+#
+# - M. Grossmann, F. Rainer; La formazione delle Parole in Italiano; pg. 97-492
+#    (2004)
+# - https://www.treccani.it/enciclopedia/plurale-dei-nomi_%28La-grammatica-italiana%29/
+# - https://www.treccani.it/enciclopedia/parole-enclitiche_%28Enciclopedia-dell%27Italiano%29/
+# - https://it.wikipedia.org/wiki/Verbi_irregolari_italiani
+#
+# You are free to reuse and modify this source. Feel free to report any errors.
+#
+# NOTE: Only the most productive rules are listed here. Moreover, some rules
+# attributable to multiple grammatical categories are listed only once in order
+# to reduce duplicates.
+#
+
+
+FULLSTRIP
+
+
+# entry point
+SFX ^ N 17
+SFX ^    0  /MFS  [^àèéìòù']
+SFX ^    0  /AN   [^àèéìòù']
+SFX ^    0  /oa
+SFX ^   à   a/AN
+SFX ^   è   e/AN
+SFX ^   é   e/AN
+SFX ^   ì   i/AN
+SFX ^   ò   o/AN
+SFX ^   ù   u/AN
+SFX ^    0  e/Vv     [aei]r
+SFX ^    0  /Vv      [aei]re
+SFX ^    0  /Vv     [aou]rre
+SFX ^ rsi  re/Vv    [aei]rsi
+SFX ^ rsi rre/Vv      trarsi
+SFX ^ rsi rre/Vv       porsi
+SFX ^ rsi rre/Vv       dursi
+SFX ^    0  /Vv          ing
+
+
+SFX M N 8
+SFX Masc         a       o
+SFX Masc         a       e
+SFX Masc_n    essa       a [^h]essa
+SFX Masc_n   hessa       a
+SFX Masc_n    essa       e [^h]essa
+SFX Masc_n   trice    tore
+SFX Masc_n ditrice    sore
+SFX Masc_n ditrice   ssore
+
+SFX F N 8
+SFX Femm         o       a
+SFX Femm         e       a
+SFX Femm_n       a    essa
+SFX Femm_n       a   hessa    [cg]a
+SFX Femm_n       e    essa
+SFX Femm_n    tore   trice
+SFX Femm_n    sore ditrice [^s]sore
+SFX Femm_n   ssore ditrice
+
+
+SFX S N 11
+SFX Sing_1   i  a
+SFX Sing_1  hi  a [cg]hi
+SFX Sing_1   i ia  [cg]i
+SFX Sing_1   e  a
+SFX Sing_1  he  a [cg]hi
+SFX Sing_1   e ia  [cg]i
+SFX Sing_2   i  o
+SFX Sing_2  hi  o [cg]hi
+SFX Sing_2   i io
+SFX Sing_3   i  e
+SFX Sing_3   i ie
+
+SFX P N 11
+SFX Plur_1m  a  i
+SFX Plur_1m  a hi  [cg]a
+SFX Plur_1m ia  i [cg]ia
+SFX Plur_1f  a  e
+SFX Plur_1f  a he  [cg]a
+SFX Plur_1f ia  e [cg]ia
+SFX Plur_2   o  i
+SFX Plur_2   o hi  [cg]o
+SFX Plur_2  io  i
+SFX Plur_3   e  i
+SFX Plur_3  ie  i
+
+
+SFX T N 5
+SFX Trnc a  /t  a
+SFX Trnc e  /t  e
+SFX Trnc i  /t  i
+SFX Trnc o  /t  o
+SFX Trnc u  /t  u
+
+SFX t N 1
+SFX trnc  0 '
+
+
+# denominals
+SFX N N 774
+SFX N_alt   0      ino [^aeioucgy]
+SFX N_alt   0     hino        [cg]
+SFX N_alt   0    chino    [aeiou]c
+SFX N_alt   0    ghino    [aeiou]g
+SFX N_alt   0     pino    [aeiou]p
+SFX N_alt   0     tino    [aeiou]t
+SFX N_alt  y       ino
+SFX N_alt  o       ino     [^cgi]o
+SFX N_alt  o      hino       [cg]o
+SFX N_alt io       ino
+SFX N_alt  a       ino     [^cgi]a
+SFX N_alt  a      hino       [cg]a
+SFX N_alt ia       ino
+SFX N_alt  e       ino       [^i]e
+SFX N_alt  e      cino         one
+SFX N_alt ie       ino
+SFX N_alt   0      ina [^aeioucgy]
+SFX N_alt   0     hina        [cg]
+SFX N_alt   0    china    [aeiou]c
+SFX N_alt   0    ghina    [aeiou]g
+SFX N_alt   0     pina    [aeiou]p
+SFX N_alt   0     tina    [aeiou]t
+SFX N_alt  y       ina
+SFX N_alt  o       ina     [^cgi]o
+SFX N_alt  o      hina       [cg]o
+SFX N_alt io       ina
+SFX N_alt  a       ina     [^cgi]a
+SFX N_alt  a      hina       [cg]a
+SFX N_alt ia       ina
+SFX N_alt  e       ina       [^i]e
+SFX N_alt  e      cina         one
+SFX N_alt ie       ina
+SFX N_alt  i       ina
+SFX N_alt  o     icino     [^cgi]o
+SFX N_alt  o    hicino       [cg]o
+SFX N_alt io     icino
+SFX N_alt  a     icino     [^cgi]a
+SFX N_alt  a    hicino       [cg]a
+SFX N_alt ia     icino
+SFX N_alt  e     icino       [^i]e
+SFX N_alt ie     icino
+SFX N_alt  o     icina     [^cgi]o
+SFX N_alt  o    hicina       [cg]o
+SFX N_alt io     icina
+SFX N_alt  a     icina     [^cgi]a
+SFX N_alt  a    hicina       [cg]a
+SFX N_alt ia     icina
+SFX N_alt  e     icina       [^i]e
+SFX N_alt ie     icina
+SFX N_alt  i     icina
+SFX N_alt  o     olino
+SFX N_alt  a     olino
+SFX N_alt  e     olino     [^cgh]e
+SFX N_alt  e    iolino       [cg]e
+SFX N_alt  o     olina
+SFX N_alt  a     olina
+SFX N_alt  e     olina     [^cgh]e
+SFX N_alt  e    iolina       [cg]e
+SFX N_alt  i     olina     [^cgh]i
+SFX N_alt  i    iolina       [cg]i
+SFX N_alt  o    oncino
+SFX N_alt  a    oncino
+SFX N_alt  e    oncino     [^cgh]e
+SFX N_alt  e   ioncino       [cg]e
+SFX N_alt  o    oncina
+SFX N_alt  a    oncina
+SFX N_alt  e    oncina     [^cgh]e
+SFX N_alt  e   ioncina       [cg]e
+SFX N_alt  i    oncina     [^cgh]i
+SFX N_alt  i   ioncina       [cg]i
+SFX N_alt   0     ello [^aeioucgy]
+SFX N_alt   0    hello        [cg]
+SFX N_alt   0   chello    [aeiou]c
+SFX N_alt   0   ghello    [aeiou]g
+SFX N_alt   0    pello    [aeiou]p
+SFX N_alt   0    tello    [aeiou]t
+SFX N_alt  y     iello
+SFX N_alt  o      ello      [nrt]o
+SFX N_alt  o      ello         cio
+SFX N_alt io      ello         cio
+SFX N_alt  a      ello      [nrt]a
+SFX N_alt  a      ello         cia
+SFX N_alt ia      ello         cia
+SFX N_alt  e      ello     [cnrt]e
+SFX N_alt  e      ello         cie
+SFX N_alt  e     cello         one
+SFX N_alt   0     ella [^aeioucgy]
+SFX N_alt   0    hella        [cg]
+SFX N_alt   0   chella    [aeiou]c
+SFX N_alt   0   ghella    [aeiou]g
+SFX N_alt   0    pella    [aeiou]p
+SFX N_alt   0    tella    [aeiou]t
+SFX N_alt  y     iella
+SFX N_alt  o      ella      [nrt]o
+SFX N_alt  o      ella         cio
+SFX N_alt io      ella         cio
+SFX N_alt  a      ella      [nrt]a
+SFX N_alt  a      ella         cia
+SFX N_alt ia      ella         cia
+SFX N_alt  e      ella     [cnrt]e
+SFX N_alt  e      ella         cie
+SFX N_alt  e     cella         one
+SFX N_alt  i      ella     [cnrt]i
+SFX N_alt  o    arello
+SFX N_alt  a    arello
+SFX N_alt  e    arello     [^cgh]e
+SFX N_alt  e   iarello       [cg]e
+SFX N_alt  o    arella
+SFX N_alt  a    arella
+SFX N_alt  e    arella     [^cgh]e
+SFX N_alt  e   iarella       [cg]e
+SFX N_alt  i    arella     [^cgh]i
+SFX N_alt  i   iarella       [cg]i
+SFX N_alt  o    erello      [^cg]o
+SFX N_alt  o   herello       [cg]o
+SFX N_alt io    erello      [cg]io
+SFX N_alt  a    erello      [^cg]a
+SFX N_alt  a   herello       [cg]a
+SFX N_alt ia    erello      [cg]ia
+SFX N_alt  e    erello
+SFX N_alt  o    erella      [^cg]o
+SFX N_alt  o   herella       [cg]o
+SFX N_alt io    erella      [cg]io
+SFX N_alt  a    erella      [^cg]a
+SFX N_alt  a   herella       [cg]a
+SFX N_alt ia    erella      [cg]ia
+SFX N_alt  e    erella
+SFX N_alt  i    erella
+SFX N_alt  o    icello     [^cgi]o
+SFX N_alt  o   hicello       [cg]o
+SFX N_alt io    icello
+SFX N_alt  a    icello     [^cgi]a
+SFX N_alt  a   hicello       [cg]a
+SFX N_alt ia    icello
+SFX N_alt  e    icello       [^i]e
+SFX N_alt ie    icello
+SFX N_alt  o    icella     [^cgi]o
+SFX N_alt  o   hicella       [cg]o
+SFX N_alt io    icella
+SFX N_alt  a    icella     [^cgi]a
+SFX N_alt  a   hicella       [cg]a
+SFX N_alt ia    icella
+SFX N_alt  e    icella       [^i]e
+SFX N_alt ie    icella
+SFX N_alt  i    icella
+SFX N_alt  o   oncello
+SFX N_alt  a   oncello
+SFX N_alt  e   oncello     [^cgh]e
+SFX N_alt  e  ioncello       [cg]e
+SFX N_alt  o   oncella
+SFX N_alt  a   oncella
+SFX N_alt  e   oncella     [^cgh]e
+SFX N_alt  e  ioncella       [cg]e
+SFX N_alt  i   oncella     [^cgh]i
+SFX N_alt  i  ioncella       [cg]i
+SFX N_alt   0     etto [^aeioucgy]
+SFX N_alt   0    hetto        [cg]
+SFX N_alt   0   chetto    [aeiou]c
+SFX N_alt   0   ghetto    [aeiou]g
+SFX N_alt   0    petto    [aeiou]p
+SFX N_alt  y     ietto
+SFX N_alt  o      etto     [^cgt]o
+SFX N_alt  o     hetto       [cg]o
+SFX N_alt io      etto      [cg]io
+SFX N_alt  a      etto     [^cgt]a
+SFX N_alt  a     hetto       [cg]a
+SFX N_alt ia      etto      [cg]ia
+SFX N_alt  e      etto       [^t]e
+SFX N_alt   0     etta [^aeioucgy]
+SFX N_alt   0    hetta        [cg]
+SFX N_alt   0   chetta    [aeiou]c
+SFX N_alt   0   ghetta    [aeiou]g
+SFX N_alt   0    petta    [aeiou]p
+SFX N_alt  y     ietta
+SFX N_alt  o      etta     [^cgt]o
+SFX N_alt  o     hetta       [cg]o
+SFX N_alt io      etta      [cg]io
+SFX N_alt  a      etta     [^cgt]a
+SFX N_alt  a     hetta       [cg]a
+SFX N_alt ia      etta      [cg]ia
+SFX N_alt  e      etta       [^t]e
+SFX N_alt  i      etta       [^t]i
+SFX N_alt   0    uccio   [^aeiouy]
+SFX N_alt   0   cuccio    [aeiou]c
+SFX N_alt   0   guccio    [aeiou]g
+SFX N_alt   0   puccio    [aeiou]p
+SFX N_alt   0   tuccio    [aeiou]t
+SFX N_alt  y    iuccio
+SFX N_alt  o     uccio
+SFX N_alt  a     uccio
+SFX N_alt  e     uccio     [^cgh]e
+SFX N_alt  e    iuccio       [cg]e
+SFX N_alt   0    uccia   [^aeiouy]
+SFX N_alt   0   cuccia    [aeiou]c
+SFX N_alt   0   guccia    [aeiou]g
+SFX N_alt   0   puccia    [aeiou]p
+SFX N_alt   0   tuccia    [aeiou]t
+SFX N_alt  y    iuccia
+SFX N_alt  o     uccia
+SFX N_alt  a     uccia
+SFX N_alt  e     uccia     [^cgh]e
+SFX N_alt  e    iuccia       [cg]e
+SFX N_alt  i     uccia     [^cgh]i
+SFX N_alt  i    iuccia       [cg]i
+SFX N_alt   0      one   [^aeiouy]
+SFX N_alt   0     cone    [aeiou]c
+SFX N_alt   0     gone    [aeiou]g
+SFX N_alt   0     pone    [aeiou]p
+SFX N_alt   0     tone    [aeiou]t
+SFX N_alt  y      ione
+SFX N_alt  o       one
+SFX N_alt  a       one
+SFX N_alt  e       one     [^cgh]e
+SFX N_alt  e      ione       [cg]e
+SFX N_alt   0      ona   [^aeiouy]
+SFX N_alt   0     cona    [aeiou]c
+SFX N_alt   0     gona    [aeiou]g
+SFX N_alt   0     pona    [aeiou]p
+SFX N_alt   0     tona    [aeiou]t
+SFX N_alt  y      iona
+SFX N_alt  o       ona
+SFX N_alt  a       ona
+SFX N_alt  e       ona     [^cgh]e
+SFX N_alt  e      iona       [cg]e
+SFX N_alt  i       ona     [^cgh]i
+SFX N_alt  i      iona       [cg]i
+SFX N_alt  o     olone
+SFX N_alt  a     olone
+SFX N_alt  e     olone     [^cgh]e
+SFX N_alt  e    iolone       [cg]e
+SFX N_alt  o     olona
+SFX N_alt  a     olona
+SFX N_alt  e     olona     [^cgh]e
+SFX N_alt  e    iolona       [cg]e
+SFX N_alt  i     olona     [^cgh]i
+SFX N_alt  i    iolona       [cg]i
+SFX N_alt   0     otto   [^aeiouy]
+SFX N_alt   0    cotto    [aeiou]c
+SFX N_alt   0    gotto    [aeiou]g
+SFX N_alt   0    potto    [aeiou]p
+SFX N_alt  y     iotto
+SFX N_alt  o      otto       [^t]o
+SFX N_alt  a      otto       [^t]a
+SFX N_alt  e      otto    [^cght]e
+SFX N_alt  e     iotto       [cg]e
+SFX N_alt   0     otta   [^aeiouy]
+SFX N_alt   0    cotta    [aeiou]c
+SFX N_alt   0    gotta    [aeiou]g
+SFX N_alt   0    potta    [aeiou]p
+SFX N_alt  y     iotta
+SFX N_alt  o      otta       [^t]o
+SFX N_alt  a      otta       [^t]a
+SFX N_alt  e      otta    [^cght]e
+SFX N_alt  e     iotta       [cg]e
+SFX N_alt  i      otta    [^cght]i
+SFX N_alt  i     iotta       [cg]i
+SFX N_alt   0    accio   [^aeiouy]
+SFX N_alt   0   caccio    [aeiou]c
+SFX N_alt   0   gaccio    [aeiou]g
+SFX N_alt   0   paccio    [aeiou]p
+SFX N_alt   0   taccio    [aeiou]t
+SFX N_alt  y    iaccio
+SFX N_alt  o     accio
+SFX N_alt  a     accio
+SFX N_alt  e     accio     [^cgh]e
+SFX N_alt  e    iaccio       [cg]e
+SFX N_alt   0    accia   [^aeiouy]
+SFX N_alt   0   caccia    [aeiou]c
+SFX N_alt   0   gaccia    [aeiou]g
+SFX N_alt   0   paccia    [aeiou]p
+SFX N_alt   0   taccia    [aeiou]t
+SFX N_alt  y    iaccia
+SFX N_alt  o     accia
+SFX N_alt  a     accia
+SFX N_alt  e     accia     [^cgh]e
+SFX N_alt  e    iaccia       [cg]e
+SFX N_alt  i     accia     [^cgh]i
+SFX N_alt  i    iaccia       [cg]i
+SFX N_n    aro      aio
+SFX N_n    ara      aia
+SFX N_n       0  ettaro            k
+SFX N_n      o      aro
+SFX N_n      a      aro
+SFX N_n      e      aro      [^cgh]e
+SFX N_n      e     iaro        [cg]e
+SFX N_n      i      aro      [^cgh]i
+SFX N_n      i     iaro        [cg]i
+SFX N_n       0  ettara            k
+SFX N_n      o      ara
+SFX N_n      a      ara
+SFX N_n      e      ara      [^cgh]e
+SFX N_n      e     iara        [cg]e
+SFX N_n      i      ara      [^cgh]i
+SFX N_n      i     iara        [cg]i
+SFX N_n    aio      aro
+SFX N_n    aia      ara
+SFX N_n      o    aiolo
+SFX N_n      a    aiolo
+SFX N_n      e    aiolo      [^cgh]e
+SFX N_n      e   iaiolo        [cg]e
+SFX N_n      i    aiolo      [^cgh]i
+SFX N_n      i   iaiolo        [cg]i
+SFX N_n      o    aiola
+SFX N_n      a    aiola
+SFX N_n      e    aiola      [^cgh]e
+SFX N_n      e   iaiola        [cg]e
+SFX N_n      i    aiola      [^cgh]i
+SFX N_n      i   iaiola        [cg]i
+SFX N_n       0   arolo    [^aeiouy]
+SFX N_n       0  carolo     [aeiou]c
+SFX N_n       0  garolo     [aeiou]g
+SFX N_n       0  parolo     [aeiou]p
+SFX N_n       0  tarolo     [aeiou]t
+SFX N_n      y   iarolo
+SFX N_n      o    arolo
+SFX N_n      a    arolo
+SFX N_n      e    arolo      [^cgh]e
+SFX N_n      e   iarolo        [cg]e
+SFX N_n      i    arolo      [^cgh]i
+SFX N_n      i   iarolo        [cg]i
+SFX N_n       0   arola    [^aeiouy]
+SFX N_n       0  carola     [aeiou]c
+SFX N_n       0  garola     [aeiou]g
+SFX N_n       0  parola     [aeiou]p
+SFX N_n       0  tarola     [aeiou]t
+SFX N_n      y   iarola
+SFX N_n      o    arola
+SFX N_n      a    arola
+SFX N_n      e    arola      [^cgh]e
+SFX N_n      e   iarola        [cg]e
+SFX N_n      i    arola      [^cgh]i
+SFX N_n      i   iarola        [cg]i
+SFX N_n      o     iere      [^cgi]o
+SFX N_n      o    hiere        [cg]o
+SFX N_n     io     iere
+SFX N_n      a     iere      [^cgi]a
+SFX N_n      a    hiere        [cg]a
+SFX N_n     ia     iere
+SFX N_n      e     iere        [^i]e
+SFX N_n     ie     iere
+SFX N_n      i     iere
+SFX N_n     te    ziere          nte
+SFX N_n      o     iera      [^cgi]o
+SFX N_n      o    hiera        [cg]o
+SFX N_n     io     iera
+SFX N_n      a     iera      [^cgi]a
+SFX N_n      a    hiera        [cg]a
+SFX N_n     ia     iera
+SFX N_n      e     iera        [^i]e
+SFX N_n     ie     iera
+SFX N_n      i     iera
+SFX N_n     te    ziera          nte
+SFX N_n       0    ismo  [^aeioucgy]
+SFX N_n       0   hismo         [cg]
+SFX N_n       0  chismo     [aeiou]c
+SFX N_n       0  ghismo     [aeiou]g
+SFX N_n       0   pismo     [aeiou]p
+SFX N_n       0   tismo     [aeiou]t
+SFX N_n      y     ismo
+SFX N_n      o     ismo      [^cgi]o
+SFX N_n      o    hismo        [cg]o
+SFX N_n     io     ismo
+SFX N_n      a     ismo      [^cgi]a
+SFX N_n      a    hismo        [cg]a
+SFX N_n     ia     ismo
+SFX N_n      e     ismo        [^i]e
+SFX N_n     ie     ismo
+SFX N_n      i     ismo
+SFX N_n       0    ista  [^aeioucgy]
+SFX N_n       0   hista         [cg]
+SFX N_n       0  chista     [aeiou]c
+SFX N_n       0  ghista     [aeiou]g
+SFX N_n       0   pista     [aeiou]p
+SFX N_n       0   tista     [aeiou]t
+SFX N_n      y     ista
+SFX N_n      o     ista      [^cgi]o
+SFX N_n      o    hista        [cg]o
+SFX N_n     io     ista
+SFX N_n      a     ista      [^cgi]a
+SFX N_n      a    hista        [cg]a
+SFX N_n     ia     ista
+SFX N_n      e     ista        [^i]e
+SFX N_n     ie     ista
+SFX N_n      i     ista
+SFX N_n    aco     ista    [^cgi]aco
+SFX N_n   iaco     ista
+SFX N_n    aca     ista    [^cgi]aca
+SFX N_n   iaca     ista
+SFX N_n    ico     ista
+SFX N_n    ica     ista
+SFX N_n    isi     ista
+SFX N_n   ismo     ista
+SFX N_n       0    iano  [^aeioucgy]
+SFX N_n       0   hiano         [cg]
+SFX N_n       0  chiano     [aeiou]c
+SFX N_n       0  ghiano     [aeiou]g
+SFX N_n       0   piano     [aeiou]p
+SFX N_n       0   tiano     [aeiou]t
+SFX N_n      y     iano
+SFX N_n      o     iano      [^cgi]o
+SFX N_n      o    hiano        [cg]o
+SFX N_n     io     iano
+SFX N_n      a     iano      [^cgi]a
+SFX N_n      a    hiano        [cg]a
+SFX N_n     ia     iano
+SFX N_n      e     iano        [^i]e
+SFX N_n     ie     iano
+SFX N_n      i     iano
+SFX N_n       0    iana  [^aeioucgy]
+SFX N_n       0   hiana         [cg]
+SFX N_n       0  chiana     [aeiou]c
+SFX N_n       0  ghiana     [aeiou]g
+SFX N_n       0   piana     [aeiou]p
+SFX N_n       0   tiana     [aeiou]t
+SFX N_n      y     iana
+SFX N_n      o     iana      [^cgi]o
+SFX N_n      o    hiana        [cg]o
+SFX N_n     io     iana
+SFX N_n      a     iana      [^cgi]a
+SFX N_n      a    hiana        [cg]a
+SFX N_n     ia     iana
+SFX N_n      e     iana        [^i]e
+SFX N_n     ie     iana
+SFX N_n      i     iana
+SFX N_n       0     ese  [^aeioucgy]
+SFX N_n       0    hese         [cg]
+SFX N_n       0   chese     [aeiou]c
+SFX N_n       0   ghese     [aeiou]g
+SFX N_n       0    pese     [aeiou]p
+SFX N_n       0    tese     [aeiou]t
+SFX N_n      y     iese
+SFX N_n      o      ese       [^cg]o
+SFX N_n      o     hese        [cg]o
+SFX N_n     io      ese       [cg]io
+SFX N_n      a      ese       [^cg]a
+SFX N_n      a     hese        [cg]a
+SFX N_n     ia      ese       [cg]ia
+SFX N_n      e      ese
+SFX N_n      i      ese
+SFX N_n       0   aggio    [^aeiouy]
+SFX N_n       0  caggio     [aeiou]c
+SFX N_n       0  gaggio     [aeiou]g
+SFX N_n       0  paggio     [aeiou]p
+SFX N_n       0  taggio     [aeiou]t
+SFX N_n      y   iaggio
+SFX N_n   ione      ura     [^z]ione
+SFX N_n  zione     tura
+SFX N_n  zione    ttura [aeiou]zione
+SFX N_n      o    atore
+SFX N_n      a    atore
+SFX N_n      e    atore      [^cgh]e
+SFX N_n      e   iatore        [cg]e
+SFX N_n      i    atore      [^cgh]i
+SFX N_n      i   iatore        [cg]i
+SFX N_n   ione      ore     [^z]ione
+SFX N_n  zione     tore
+SFX N_n  zione    ttore [aeiou]zione
+SFX N_n      o    atora
+SFX N_n      a    atora
+SFX N_n      e    atora      [^cgh]e
+SFX N_n      e   iatora        [cg]e
+SFX N_n      i    atora      [^cgh]i
+SFX N_n      i   iatora        [cg]i
+SFX N_n   ione      ora     [^z]ione
+SFX N_n  zione     tora
+SFX N_n  zione    ttora [aeiou]zione
+SFX N_n      o   atrice
+SFX N_n      a   atrice
+SFX N_n      e   atrice      [^cgh]e
+SFX N_n      e  iatrice        [cg]e
+SFX N_n      i   atrice      [^cgh]i
+SFX N_n      i  iatrice        [cg]i
+SFX N_n  tione    trice
+SFX N_n  zione    trice
+SFX N_n  zione   ttrice [aeiou]zione
+SFX N_n      e       ia         tore
+SFX N_n      a       ia         tora
+SFX N_n   rice     oria        trice
+SFX N_n      o     eria       [^cg]o
+SFX N_n      o    heria        [cg]o
+SFX N_n     io     eria       [cg]io
+SFX N_n      a     eria       [^cg]a
+SFX N_n      a    heria        [cg]a
+SFX N_n     ia     eria       [cg]ia
+SFX N_n      e     eria
+SFX N_n      i     eria
+SFX N_n    aio     eria    [^cgi]aio
+SFX N_n    aio    heria      [cg]aio
+SFX N_n   iaio     eria     [cg]iaio
+SFX N_n    aia     eria    [^cgi]aia
+SFX N_n    aia    heria      [cg]aia
+SFX N_n   iaia     eria     [cg]iaia
+SFX N_n   iere     eria [^aeoul]iere
+SFX N_n   iere     eria    [^g]liere
+SFX N_n    ere     eria       gliere
+SFX N_n    ere     eria   [aeou]iere
+SFX N_n   ione      oio     [^z]ione
+SFX N_n  zione     toio
+SFX N_n  zione    ttoio [aeiou]zione
+SFX N_n   ione      oia     [^z]ione
+SFX N_n  zione     toia
+SFX N_n  zione    ttoia [aeiou]zione
+SFX N_n      o   ificio      [^cgi]o
+SFX N_n      o  hificio        [cg]o
+SFX N_n     io   ificio
+SFX N_n      a   ificio      [^cgi]a
+SFX N_n      a  hificio        [cg]a
+SFX N_n     ia   ificio
+SFX N_n      e   ificio        [^i]e
+SFX N_n     ie   ificio
+SFX N_n      i   ificio
+SFX N_n      o      ato
+SFX N_n      a      ato
+SFX N_n      e      ato      [^cgh]e
+SFX N_n      e     iato        [cg]e
+SFX N_n      i      ato      [^cgh]i
+SFX N_n      i     iato        [cg]i
+SFX N_n       0     ata    [^aeiouy]
+SFX N_n       0    cata     [aeiou]c
+SFX N_n       0    gata     [aeiou]g
+SFX N_n       0    pata     [aeiou]p
+SFX N_n       0    tata     [aeiou]t
+SFX N_n      y     iata
+SFX N_n      o      ata
+SFX N_n      a      ata
+SFX N_n      e      ata      [^cgh]e
+SFX N_n      e     iata        [cg]e
+SFX N_n      i      ata      [^cgh]i
+SFX N_n      i     iata        [cg]i
+SFX N_n      o      ame
+SFX N_n      a      ame
+SFX N_n      e      ame      [^cgh]e
+SFX N_n      e     iame        [cg]e
+SFX N_n      i      ame      [^cgh]i
+SFX N_n      i     iame        [cg]i
+SFX N_n      o      ume
+SFX N_n      a      ume
+SFX N_n      e      ume      [^cgh]e
+SFX N_n      e     iume        [cg]e
+SFX N_n      i      ume      [^cgh]i
+SFX N_n      i     iume        [cg]i
+SFX N_n      o    aglia
+SFX N_n      a    aglia
+SFX N_n      e    aglia      [^cgh]e
+SFX N_n      e   iaglia        [cg]e
+SFX N_n      i    aglia      [^cgh]i
+SFX N_n      i   iaglia        [cg]i
+SFX N_n     o    istica      [^cgi]o
+SFX N_n     o   histica        [cg]o
+SFX N_n    io    istica
+SFX N_n     a    istica      [^cgi]a
+SFX N_n     a   histica        [cg]a
+SFX N_n    ia    istica
+SFX N_n     e    istica        [^i]e
+SFX N_n    ie    istica
+SFX N_n     i    istica
+SFX N_n     o       ite      [^cgi]o
+SFX N_n     o      hite        [cg]o
+SFX N_n    io       ite
+SFX N_n     a       ite      [^cgi]a
+SFX N_n     a      hite        [cg]a
+SFX N_n    ia       ite
+SFX N_n     e       ite        [^i]e
+SFX N_n    ie       ite
+SFX N_n     i       ite
+SFX N_aj     e         ale         ione
+SFX N_aj     a         ale          ura
+SFX N_aj     e         ale          ore
+SFX N_aj     e        iale          ore
+SFX N_aj     a         ale          ora
+SFX N_aj     a        iale          ora
+SFX N_aj     o         ale        mento
+SFX N_aj     o         ale         orio
+SFX N_aj     a         ale         oria
+SFX N_aj     e         ale         oide
+SFX N_aj     o         ale          ico
+SFX N_aj     a         ale          ica
+SFX N_aj     o        iale           za
+SFX N_aj     a        iale           za
+SFX N_aj     o        uale [lnrst][st]o
+SFX N_aj     a        uale [lnrst][st]a
+SFX N_aj     e         are           le
+SFX N_aj     e         are       l[^l]e
+SFX N_aj     a         are           la
+SFX N_aj     a         are       l[^l]a
+SFX N_aj     a         are   l[^l][ei]a
+SFX N_aj     o         are           lo
+SFX N_aj     o         are       l[^l]o
+SFX N_aj     o         are   l[^l][ei]o
+SFX N_aj     o         are        mento
+SFX N_aj     e        iare         bile
+SFX N_aj     à        ario          ità
+SFX N_aj     o        ario        mento
+SFX N_aj     a       iario           za
+SFX N_aj      0        ico  [^aeioucgy]
+SFX N_aj      0       hico         [cg]
+SFX N_aj      0      chico     [aeiou]c
+SFX N_aj      0      ghico     [aeiou]g
+SFX N_aj      0       pico     [aeiou]p
+SFX N_aj      0       tico     [aeiou]t
+SFX N_aj     y         ico
+SFX N_aj     o         ico      [^cgi]o
+SFX N_aj     o        hico        [cg]o
+SFX N_aj    io         ico
+SFX N_aj     a         ico      [^cgi]a
+SFX N_aj     a        hico        [cg]a
+SFX N_aj    ia         ico
+SFX N_aj     e         ico        [^i]e
+SFX N_aj    ie         ico
+SFX N_aj     i         ico
+SFX N_aj    si        tico       [^s]si
+SFX N_aj   ssi       ttico
+SFX N_aj   sia        tico      [^s]sia
+SFX N_aj  ssia       ttico
+SFX N_aj   zia        tico      [^z]zia
+SFX N_aj     a       atico           ma
+SFX N_aj     a      astico
+SFX N_aj      0     istico  [^aeioucgy]
+SFX N_aj      0    histico         [cg]
+SFX N_aj      0   chistico     [aeiou]c
+SFX N_aj      0   ghistico     [aeiou]g
+SFX N_aj      0    pistico     [aeiou]p
+SFX N_aj      0    tistico     [aeiou]t
+SFX N_aj     y      istico
+SFX N_aj     o      istico      [^cgi]o
+SFX N_aj     o     histico        [cg]o
+SFX N_aj    io      istico
+SFX N_aj     a      istico      [^cgi]a
+SFX N_aj     a     histico        [cg]a
+SFX N_aj    ia      istico
+SFX N_aj     e      istico        [^i]e
+SFX N_aj    ie      istico
+SFX N_aj     i      istico
+SFX N_aj   smo       stico      [ai]smo
+SFX N_aj   sta       stico      [ai]sta
+SFX N_aj  ione         ivo     [^z]ione
+SFX N_aj zione        tivo
+SFX N_aj zione       ttivo [aeiou]zione
+SFX N_aj  ione        orio     [^z]ione
+SFX N_aj zione       torio
+SFX N_aj zione      ttorio [aeiou]zione
+SFX N_aj     e          io          ore
+SFX N_aj  iere        iero
+SFX N_aj     e        izio          ale
+SFX N_aj     o        izio          ato
+SFX N_aj     e          eo          ide
+SFX N_aj      0       esco  [^aeioucgy]
+SFX N_aj      0      hesco         [cg]
+SFX N_aj      0     chesco     [aeiou]c
+SFX N_aj      0     ghesco     [aeiou]g
+SFX N_aj      0      pesco     [aeiou]p
+SFX N_aj      0      tesco     [aeiou]t
+SFX N_aj     y       iesco
+SFX N_aj     o        esco       [^cg]o
+SFX N_aj     o       hesco        [cg]o
+SFX N_aj    io        esco       [cg]io
+SFX N_aj     a        esco       [^cg]a
+SFX N_aj     a       hesco        [cg]a
+SFX N_aj    ia        esco       [cg]ia
+SFX N_aj     e        esco
+SFX N_aj     i        esco
+SFX N_aj     o        aceo
+SFX N_aj     a        aceo
+SFX N_aj     e        aceo      [^cgh]e
+SFX N_aj     e       iaceo        [cg]e
+SFX N_aj     i        aceo      [^cgh]i
+SFX N_aj     i       iaceo        [cg]i
+SFX N_aj   oso        aceo
+SFX N_aj     o        igno      [^cgi]o
+SFX N_aj     o       higno        [cg]o
+SFX N_aj    io        igno
+SFX N_aj     a        igno      [^cgi]a
+SFX N_aj     a       higno        [cg]a
+SFX N_aj    ia        igno
+SFX N_aj     e        igno        [^i]e
+SFX N_aj    ie        igno
+SFX N_aj     i        igno
+SFX N_aj     o         oso
+SFX N_aj     a         oso
+SFX N_aj     e         oso      [^cgh]e
+SFX N_aj     e        ioso        [cg]e
+SFX N_aj     i         oso      [^cgh]i
+SFX N_aj     i        ioso        [cg]i
+SFX N_aj     o         uto
+SFX N_aj     a         uto
+SFX N_aj     e         uto      [^cgh]e
+SFX N_aj     e        iuto        [cg]e
+SFX N_aj     i         uto      [^cgh]i
+SFX N_aj     i        iuto        [cg]i
+SFX N_aj      0        ano    [^aeiouy]
+SFX N_aj      0       cano     [aeiou]c
+SFX N_aj      0       gano     [aeiou]g
+SFX N_aj      0       pano     [aeiou]p
+SFX N_aj      0       tano     [aeiou]t
+SFX N_aj     y        iano
+SFX N_aj     o         ano
+SFX N_aj     a         ano
+SFX N_aj     e         ano      [^cgh]e
+SFX N_aj     e        iano        [cg]e
+SFX N_aj     i         ano      [^cgh]i
+SFX N_aj     i        iano        [cg]i
+SFX N_aj   ese        ense
+SFX N_aj      0   eggiante  [^aeioucgy]
+SFX N_aj      0  heggiante         [cg]
+SFX N_aj      0 cheggiante     [aeiou]c
+SFX N_aj      0 gheggiante     [aeiou]g
+SFX N_aj      0  peggiante     [aeiou]p
+SFX N_aj      0  teggiante     [aeiou]t
+SFX N_aj     y   ieggiante
+SFX N_aj     o    eggiante       [^cg]o
+SFX N_aj     o   heggiante        [cg]o
+SFX N_aj    io    eggiante       [cg]io
+SFX N_aj     a    eggiante       [^cg]a
+SFX N_aj     a   heggiante        [cg]a
+SFX N_aj    ia    eggiante       [cg]ia
+SFX N_aj     e    eggiante
+SFX N_aj     i    eggiante
+SFX N_v     0     are [^aeiouy]
+SFX N_v     0    care  [aeiou]c
+SFX N_v     0    gare  [aeiou]g
+SFX N_v     0    pare  [aeiou]p
+SFX N_v     0    tare  [aeiou]t
+SFX N_v    y     iare
+SFX N_vp   o      are/n
+SFX N_vp   a      are/n
+SFX N_vp   e      are/n [^cgh]e
+SFX N_vp   e     iare/n   [cg]e
+SFX N_vp   i      are/n [^cgh]i
+SFX N_vp   i     iare/n   [cg]i
+SFX N_v    o  ificare   [^cgi]o
+SFX N_v    o hificare     [cg]o
+SFX N_v   io  ificare
+SFX N_v    a  ificare   [^cgi]a
+SFX N_v    a hificare     [cg]a
+SFX N_v   ia  ificare
+SFX N_v    e  ificare     [^i]e
+SFX N_v   ie  ificare
+SFX N_v    i  ificare
+SFX N_v    o   izzare   [^cgi]o
+SFX N_v    o  hizzare     [cg]o
+SFX N_v   io   izzare
+SFX N_v    a   izzare   [^cgi]a
+SFX N_v    a  hizzare     [cg]a
+SFX N_v   ia   izzare
+SFX N_v    e   izzare     [^i]e
+SFX N_v   ie   izzare
+SFX N_v    i   izzare
+SFX N_v   is   izzare
+SFX N_v  osi   izzare [^cgi]osi
+SFX N_v  osi  hizzare   [cg]osi
+SFX N_v iosi   izzare
+SFX N_v  esi   izzare   [^i]esi
+SFX N_v iesi   izzare
+SFX N_v  isi   izzare
+SFX N_v   si  tizzare    [^s]si
+SFX N_v  ssi  tizzare
+SFX N_v     0 tizzare        ma
+SFX N_v ismo   izzare
+SFX N_v ista   izzare
+SFX N_v  ite   izzare
+SFX N_v   ia  eggiare [^cghl]ia
+SFX N_v   ia  eggiare   [^g]lia
+# SFX N_aj     e      istico         ione
+# SFX N_aj     e      istica         ione
+# SFX N_aj     o         ano           io
+# SFX N_aj     a         ano           ia
+# SFX N_aj      0        ano           oi
+# SFX N_aj     a         ano           oa
+# SFX N_aj     a         ano           ca
+# SFX N_aj     o         ana           io
+# SFX N_aj     a         ana           ia
+# SFX N_aj      0        ana           oi
+# SFX N_aj     a         ana           oa
+# SFX N_aj     a         ana           ca
+
+# parasynthetics
+PFX n N 21
+PFX n_vp 0  ad  [aeioud]
+PFX n_vp 0  ab  b
+PFX n_vp 0  ac  c
+PFX n_vp 0  af  f
+PFX n_vp 0  ag  g
+PFX n_vp 0  al  l
+PFX n_vp 0  am  m
+PFX n_vp 0  an  n
+PFX n_vp 0  ap  p
+PFX n_vp 0  ar  r
+PFX n_vp 0  as  s[aeiou]
+PFX n_vp 0  at  t
+PFX n_vp 0  av  v
+PFX n_vp 0  az  z
+PFX n_vp 0  in  [^blmprs]
+PFX n_vp 0  im  [bmp]
+PFX n_vp 0  il  l
+PFX n_vp 0  ir  r
+PFX n_vp 0  in  s[aeiou]
+PFX n_vp 0  i   s[^aeiou]
+PFX n_vp 0  s   [^s]
+
+
+# deverbals
+SFX V N 1358
+SFX V_alt  are    ellare [^cgi]are
+SFX V_alt  are   cellare     onare
+SFX V_alt  are   hellare   [cg]are
+SFX V_alt  are    ellare [^cg]iare
+SFX V_alt iare    ellare  [cg]iare
+SFX V_alt  are  erellare [^cgi]are
+SFX V_alt  are herellare   [cg]are
+SFX V_alt  are  erellare [^cg]iare
+SFX V_alt iare  erellare  [cg]iare
+SFX V_alt  are    ettare [^cgi]are
+SFX V_alt  are   hettare   [cg]are
+SFX V_alt  are    ettare [^cg]iare
+SFX V_alt iare    ettare  [cg]iare
+SFX V_alt  are    ottare
+SFX V_alt  are   ucciare
+SFX V_c0    ecco  ecco/e            ecco
+SFX V_c1       e    /e             are
+SFX V_c1     are    o
+SFX V_c1     are    i        [^cgi]are
+SFX V_c1     are   hi          [cg]are
+SFX V_c1    iare    i
+SFX V_c1     are    a/e
+SFX V_c1     are    iamo/e   [^cgi]are
+SFX V_c1     are   hiamo/e     [cg]are
+SFX V_c1    iare    iamo/e
+SFX V_c1     are    ate/e
+SFX V_c1     are    ano
+SFX V_c1     are    avo
+SFX V_c1     are    avi
+SFX V_c1     are    ava
+SFX V_c1     are    avamo
+SFX V_c1     are    avate
+SFX V_c1     are    avano
+SFX V_c1     are    ai
+SFX V_c1     are    asti
+SFX V_c1     are    ò
+SFX V_c1     are    ammo
+SFX V_c1     are    aste
+SFX V_c1     are    arono
+SFX V_c1     are    erò      [^cgi]are
+SFX V_c1     are   herò        [cg]are
+SFX V_c1     are    erò      [^cg]iare
+SFX V_c1    iare    erò       [cg]iare
+SFX V_c1     are    erai     [^cgi]are
+SFX V_c1     are   herai       [cg]are
+SFX V_c1     are    erai     [^cg]iare
+SFX V_c1    iare    erai      [cg]iare
+SFX V_c1     are    erà      [^cgi]are
+SFX V_c1     are   herà        [cg]are
+SFX V_c1     are    erà      [^cg]iare
+SFX V_c1    iare    erà       [cg]iare
+SFX V_c1     are    eremo    [^cgi]are
+SFX V_c1     are   heremo      [cg]are
+SFX V_c1     are    eremo    [^cg]iare
+SFX V_c1    iare    eremo     [cg]iare
+SFX V_c1     are    erete    [^cgi]are
+SFX V_c1     are   herete      [cg]are
+SFX V_c1     are    erete    [^cg]iare
+SFX V_c1    iare    erete     [cg]iare
+SFX V_c1     are    eranno   [^cgi]are
+SFX V_c1     are   heranno     [cg]are
+SFX V_c1     are    eranno   [^cg]iare
+SFX V_c1    iare    eranno    [cg]iare
+SFX V_c1     are    erei     [^cgi]are
+SFX V_c1     are   herei       [cg]are
+SFX V_c1     are    erei     [^cg]iare
+SFX V_c1    iare    erei      [cg]iare
+SFX V_c1     are    eresti   [^cgi]are
+SFX V_c1     are   heresti     [cg]are
+SFX V_c1     are    eresti   [^cg]iare
+SFX V_c1    iare    eresti    [cg]iare
+SFX V_c1     are    erebbe   [^cgi]are
+SFX V_c1     are   herebbe     [cg]are
+SFX V_c1     are    erebbe   [^cg]iare
+SFX V_c1    iare    erebbe    [cg]iare
+SFX V_c1     are    eremmo   [^cgi]are
+SFX V_c1     are   heremmo     [cg]are
+SFX V_c1     are    eremmo   [^cg]iare
+SFX V_c1    iare    eremmo    [cg]iare
+SFX V_c1     are    ereste   [^cgi]are
+SFX V_c1     are   hereste     [cg]are
+SFX V_c1     are    ereste   [^cg]iare
+SFX V_c1    iare    ereste    [cg]iare
+SFX V_c1     are    erebbero [^cgi]are
+SFX V_c1     are   herebbero   [cg]are
+SFX V_c1     are    erebbero [^cg]iare
+SFX V_c1    iare    erebbero  [cg]iare
+SFX V_c1     are    iate     [^cgi]are
+SFX V_c1     are   hiate       [cg]are
+SFX V_c1    iare    iate
+SFX V_c1     are    ino      [^cgi]are
+SFX V_c1     are   hino        [cg]are
+SFX V_c1    iare    ino
+SFX V_c1     are    assi
+SFX V_c1     are    asse
+SFX V_c1     are    assimo
+SFX V_c1     are    assero
+SFX V_c1     are    ando/e
+SFX V_c1     are    ante/e
+SFX V_c1     are    anti/e
+SFX V_c1     are    ato/e
+SFX V_c1     are    ata/e
+SFX V_c1     are    ati/e
+SFX V_c1     are    à               dare
+SFX V_c1     are    anno            dare
+SFX V_c1     are    iedi            dare
+SFX V_c1     are    etti            dare
+SFX V_c1     are    esti            dare
+SFX V_c1     are    iede            dare
+SFX V_c1     are    ette            dare
+SFX V_c1     are    emmo            dare
+SFX V_c1     are    este            dare
+SFX V_c1     are    iedero          dare
+SFX V_c1     are    ettero          dare
+SFX V_c1     are    arò             dare
+SFX V_c1     are    arai            dare
+SFX V_c1     are    arà             dare
+SFX V_c1     are    aremo           dare
+SFX V_c1     are    arete           dare
+SFX V_c1     are    aranno          dare
+SFX V_c1     are    arei            dare
+SFX V_c1     are    aresti          dare
+SFX V_c1     are    arebbe          dare
+SFX V_c1     are    aremmo          dare
+SFX V_c1     are    areste          dare
+SFX V_c1     are    arebbero        dare
+SFX V_c1     are    ia              dare
+SFX V_c1     are    iano            dare
+SFX V_c1     are    essi            dare
+SFX V_c1     are    esse            dare
+SFX V_c1     are    essimo          dare
+SFX V_c1     are    essero          dare
+SFX V_c1     are    a/E             dare
+SFX V_c1     are    à              stare
+SFX V_c1     are    anno           stare
+SFX V_c1     are    etti           stare
+SFX V_c1     are    esti           stare
+SFX V_c1     are    ette           stare
+SFX V_c1     are    emmo           stare
+SFX V_c1     are    este           stare
+SFX V_c1     are    ettero         stare
+SFX V_c1     are    arò            stare
+SFX V_c1     are    arai           stare
+SFX V_c1     are    arà            stare
+SFX V_c1     are    aremo          stare
+SFX V_c1     are    arete          stare
+SFX V_c1     are    aranno         stare
+SFX V_c1     are    arei           stare
+SFX V_c1     are    aresti         stare
+SFX V_c1     are    arebbe         stare
+SFX V_c1     are    aremmo         stare
+SFX V_c1     are    areste         stare
+SFX V_c1     are    arebbero       stare
+SFX V_c1     are    ia             stare
+SFX V_c1     are    iano           stare
+SFX V_c1     are    essi           stare
+SFX V_c1     are    esse           stare
+SFX V_c1     are    essimo         stare
+SFX V_c1     are    essero         stare
+SFX V_c1     are    a/E            stare
+SFX V_c1  andare  vado            andare
+SFX V_c1  andare  vai             andare
+SFX V_c1  andare  va/eE           andare
+SFX V_c1  andare  vanno           andare
+SFX V_c1  andare  andrò           andare
+SFX V_c1  andare  andrai          andare
+SFX V_c1  andare  andrà           andare
+SFX V_c1  andare  andremo         andare
+SFX V_c1  andare  andrete         andare
+SFX V_c1  andare  andranno        andare
+SFX V_c1  andare  andrei          andare
+SFX V_c1  andare  andresti        andare
+SFX V_c1  andare  andrebbe        andare
+SFX V_c1  andare  andremmo        andare
+SFX V_c1  andare  andreste        andare
+SFX V_c1  andare  andrebbero      andare
+SFX V_c1  andare  vada            andare
+SFX V_c1  andare  vadano          andare
+SFX V_c1     are  acere/V           fare
+SFX V_c2       e    /e             ere
+SFX V_c2     ere    o         [^in]ere
+SFX V_c2     ere    o     [^gl][in]ere
+SFX V_c2  gliere  lgo
+SFX V_c2   gnere  ngo
+SFX V_c2     ere    i/e        [^i]ere
+SFX V_c2    iere    i/e
+SFX V_c2     ere    e
+SFX V_c2     ere    iamo/e     [^i]ere
+SFX V_c2    iere    iamo/e
+SFX V_c2     ere    ete/e
+SFX V_c2     ere    ono       [^in]ere
+SFX V_c2     ere    ono   [^gl][in]ere
+SFX V_c2  gliere  lgono
+SFX V_c2   gnere  ngono
+SFX V_c2     ere    evo
+SFX V_c2     ere    evi
+SFX V_c2     ere    eva
+SFX V_c2     ere    evamo
+SFX V_c2     ere    evate
+SFX V_c2     ere    evano
+SFX V_c2     ere    ei        [^in]ere
+SFX V_c2     ere    ei    [^gl][in]ere
+SFX V_c2     ere etti         [^in]ere
+SFX V_c2     ere etti     [^gl][in]ere
+SFX V_c2    gere   si         [^g]gere
+SFX V_c2   ggere  ssi
+SFX V_c2  gliere  lsi
+SFX V_c2   gnere  nsi
+SFX V_c2     ere    esti
+SFX V_c2     ere    é         [^in]ere
+SFX V_c2     ere    é     [^gl][in]ere
+SFX V_c2     ere ette         [^in]ere
+SFX V_c2     ere ette     [^gl][in]ere
+SFX V_c2    gere   se         [^g]gere
+SFX V_c2   ggere  sse
+SFX V_c2  gliere  lse
+SFX V_c2   gnere  nse
+SFX V_c2     ere    emmo
+SFX V_c2     ere    este
+SFX V_c2     ere    erono     [^in]ere
+SFX V_c2     ere    erono [^gl][in]ere
+SFX V_c2     ere ettero       [^in]ere
+SFX V_c2     ere ettero   [^gl][in]ere
+SFX V_c2    dere   sero       [^n]dere
+SFX V_c2    gere   sero       [^g]gere
+SFX V_c2   ggere  ssero
+SFX V_c2  gliere  lsero
+SFX V_c2   gnere  nsero
+SFX V_c2     ere    erò
+SFX V_c2     ere    erai
+SFX V_c2     ere    erà
+SFX V_c2     ere    eremo
+SFX V_c2     ere    erete
+SFX V_c2     ere    eranno
+SFX V_c2     ere    erei
+SFX V_c2     ere    eresti
+SFX V_c2     ere    erebbe
+SFX V_c2     ere    eremmo
+SFX V_c2     ere    ereste
+SFX V_c2     ere    erebbero
+SFX V_c2     ere    a         [^in]ere
+SFX V_c2     ere    a     [^gl][in]ere
+SFX V_c2  gliere  lga
+SFX V_c2   gnere  nga
+SFX V_c2     ere    iate       [^i]ere
+SFX V_c2    iere    iate
+SFX V_c2     ere    ano       [^in]ere
+SFX V_c2     ere    ano   [^gl][in]ere
+SFX V_c2  gliere  lgano
+SFX V_c2   gnere  ngano
+SFX V_c2     ere    essi
+SFX V_c2     ere    esse
+SFX V_c2     ere    essimo
+SFX V_c2     ere    essero
+SFX V_c2     ere    endo/e
+SFX V_c2     ere    ente/e
+SFX V_c2     ere    enti/e
+SFX V_c2     ere    uto/e  [^cginu]ere
+SFX V_c2     ere    uto/e [^gl][in]ere
+SFX V_c2     ere   iuto/e         cere
+SFX V_c2    dere   so/e       [^n]dere
+SFX V_c2    gere   to/e       [^g]gere
+SFX V_c2   ggere  tto/e
+SFX V_c2  gliere  lto/e
+SFX V_c2   gnere  nto/e
+SFX V_c2     ere    uta/e  [^cginu]ere
+SFX V_c2     ere    uta/e [^gl][in]ere
+SFX V_c2     ere   iuta/e         cere
+SFX V_c2    dere   sa/e       [^n]dere
+SFX V_c2    gere   ta/e       [^g]gere
+SFX V_c2   ggere  tta/e
+SFX V_c2  gliere  lta/e
+SFX V_c2   gnere  nta/e
+SFX V_c2     ere    uti/e  [^cginu]ere
+SFX V_c2     ere    uti/e [^gl][in]ere
+SFX V_c2     ere   iuti/e         cere
+SFX V_c2    dere   si/e       [^n]dere
+SFX V_c2    gere   ti/e       [^g]gere
+SFX V_c2   ggere  tti/e
+SFX V_c2  gliere  lti/e
+SFX V_c2   gnere  nti/e
+SFX V_c2     ere    ute/e  [^cginu]ere
+SFX V_c2     ere    ute/e [^gl][in]ere
+SFX V_c2     ere   iute/e         cere
+SFX V_c2    dere   se/e       [^n]dere
+SFX V_c2    gere   te/e       [^g]gere
+SFX V_c2   ggere  tte/e
+SFX V_c2  gliere  lte/e
+SFX V_c2   gnere  nte/e
+SFX V_c2_ essere  sono            essere
+SFX V_c2_ essere  sei             essere
+SFX V_c2_ essere  è               essere
+SFX V_c2_ essere  siamo/e         essere
+SFX V_c2_ essere  siete           essere
+SFX V_c2_ essere  ero             essere
+SFX V_c2_ essere  eri             essere
+SFX V_c2_ essere  era             essere
+SFX V_c2_ essere  eravamo         essere
+SFX V_c2_ essere  eravate         essere
+SFX V_c2_ essere  erano           essere
+SFX V_c2_ essere  fui             essere
+SFX V_c2_ essere  fosti           essere
+SFX V_c2_ essere  fu              essere
+SFX V_c2_ essere  fummo           essere
+SFX V_c2_ essere  foste           essere
+SFX V_c2_ essere  furono          essere
+SFX V_c2_ essere  sarò            essere
+SFX V_c2_ essere  sarai           essere
+SFX V_c2_ essere  sarà            essere
+SFX V_c2_ essere  saremo          essere
+SFX V_c2_ essere  sarete          essere
+SFX V_c2_ essere  saranno         essere
+SFX V_c2_ essere  sarei           essere
+SFX V_c2_ essere  saresti         essere
+SFX V_c2_ essere  sarebbe         essere
+SFX V_c2_ essere  saremmo         essere
+SFX V_c2_ essere  sareste         essere
+SFX V_c2_ essere  sarebbero       essere
+SFX V_c2_ essere  sia             essere
+SFX V_c2_ essere  siate/e         essere
+SFX V_c2_ essere  siano           essere
+SFX V_c2_ essere  fossi           essere
+SFX V_c2_ essere  fosse           essere
+SFX V_c2_ essere  fossimo         essere
+SFX V_c2_ essere  fossero         essere
+SFX V_c2_ essere  sii/e           essere
+SFX V_c2_  avere  ho               avere
+SFX V_c2_  avere  hai              avere
+SFX V_c2_  avere  ha               avere
+SFX V_c2_  avere  abbiamo/e        avere
+SFX V_c2_  avere  hanno            avere
+SFX V_c2_  avere  ebbi             avere
+SFX V_c2_  avere  ebbe             avere
+SFX V_c2_  avere  ebbero           avere
+SFX V_c2_  avere  avrò             avere
+SFX V_c2_  avere  avrai            avere
+SFX V_c2_  avere  avrà             avere
+SFX V_c2_  avere  avremo           avere
+SFX V_c2_  avere  avrete           avere
+SFX V_c2_  avere  avranno          avere
+SFX V_c2_  avere  avrei            avere
+SFX V_c2_  avere  avresti          avere
+SFX V_c2_  avere  avrebbe          avere
+SFX V_c2_  avere  avremmo          avere
+SFX V_c2_  avere  avreste          avere
+SFX V_c2_  avere  avrebbero        avere
+SFX V_c2_  avere  abbia            avere
+SFX V_c2_  avere  abbiate/e        avere
+SFX V_c2_  avere  abbiano          avere
+SFX V_c2_  avere  abbi/e           avere
+SFX V_c2   acere  accio        [it]acere
+SFX V_c2   acere  acciamo/e    [it]acere
+SFX V_c2   acere  acciono      [it]acere
+SFX V_c2   acere  acqui        [it]acere
+SFX V_c2   acere  acque        [it]acere
+SFX V_c2   acere  acquero      [it]acere
+SFX V_c2   acere  accia        [it]acere
+SFX V_c2   acere  acciate      [it]acere
+SFX V_c2   acere  acciano      [it]acere
+SFX V_c2  uocere  ocere/V        nuocere
+SFX V_c2  uocere  occio          nuocere
+SFX V_c2   ocere  occio          nuocere
+SFX V_c2  uocere  occiono        nuocere
+SFX V_c2   ocere  occiono        nuocere
+SFX V_c2  uocere  ocqui          nuocere
+SFX V_c2  uocere  ocque          nuocere
+SFX V_c2  uocere  ocquero        nuocere
+SFX V_c2  uocere  occia          nuocere
+SFX V_c2   ocere  occia          nuocere
+SFX V_c2  uocere  occiano        nuocere
+SFX V_c2   ocere  occiano        nuocere
+SFX V_c2   adere  addi            cadere
+SFX V_c2   adere  adde            cadere
+SFX V_c2   adere  addero          cadere
+SFX V_c2   adere  adrò            cadere
+SFX V_c2   adere  adrai           cadere
+SFX V_c2   adere  adrà            cadere
+SFX V_c2   adere  adremo          cadere
+SFX V_c2   adere  adrete          cadere
+SFX V_c2   adere  adranno         cadere
+SFX V_c2   adere  adrei           cadere
+SFX V_c2   adere  adresti         cadere
+SFX V_c2   adere  adrebbe         cadere
+SFX V_c2   adere  adremmo         cadere
+SFX V_c2   adere  adreste         cadere
+SFX V_c2   adere  adrebbero       cadere
+SFX V_c2   edere iedere/V         sedere
+SFX V_c2   edere  eggo            sedere
+SFX V_c2   edere  eggono          sedere
+SFX V_c2   edere  egga            sedere
+SFX V_c2   edere  eggano          sedere
+SFX V_c2   odere  odrò            godere
+SFX V_c2   odere  odrai           godere
+SFX V_c2   odere  odrà            godere
+SFX V_c2   odere  odremo          godere
+SFX V_c2   odere  odrete          godere
+SFX V_c2   odere  odranno         godere
+SFX V_c2   odere  odrei           godere
+SFX V_c2   odere  odresti         godere
+SFX V_c2   odere  odrebbe         godere
+SFX V_c2   odere  odremmo         godere
+SFX V_c2   odere  odreste         godere
+SFX V_c2   odere  odrebbero       godere
+SFX V_c2   alere  aglia           calere
+SFX V_c2   alere  alse            calere
+SFX V_c2   alere  algo            valere
+SFX V_c2   alere  algono          valere
+SFX V_c2   alere  alsero          valere
+SFX V_c2   alere  arrò            valere
+SFX V_c2   alere  arrai           valere
+SFX V_c2   alere  arrà            valere
+SFX V_c2   alere  arremo          valere
+SFX V_c2   alere  arrete          valere
+SFX V_c2   alere  arranno         valere
+SFX V_c2   alere  arrei           valere
+SFX V_c2   alere  arresti         valere
+SFX V_c2   alere  arrebbe         valere
+SFX V_c2   alere  arremmo         valere
+SFX V_c2   alere  arreste         valere
+SFX V_c2   alere  arrebbero       valere
+SFX V_c2   alere  alga            valere
+SFX V_c2   alere  algano          valere
+SFX V_c2   alere  also/e          valere
+SFX V_c2   alere  alsa/e          valere
+SFX V_c2   alere  alsi/e          valere
+SFX V_c2   alere  alse/e          valere
+SFX V_c2  ellere  elsero      [cv]ellere
+SFX V_c2  ellere  elso/e         cellere
+SFX V_c2  ellere  elsa/e         cellere
+SFX V_c2  ellere  elsi/e         cellere
+SFX V_c2  ellere  else/e         cellere
+SFX V_c2  ellere  elgo           vellere
+SFX V_c2  ellere  elgono         vellere
+SFX V_c2  ellere  elsi           vellere
+SFX V_c2  ellere  else           vellere
+SFX V_c2  ellere  elga           vellere
+SFX V_c2  ellere  elgano         vellere
+SFX V_c2  ellere  ulsero      [pv]ellere
+SFX V_c2  ellere  ulso/e      [pv]ellere
+SFX V_c2  ellere  ulsa/e      [pv]ellere
+SFX V_c2  ellere  ulsi/e      [pv]ellere
+SFX V_c2  ellere  ulse/e      [pv]ellere
+SFX V_c2  ellere  elto/e         vellere
+SFX V_c2  ellere  elta/e         vellere
+SFX V_c2  ellere  elti/e         vellere
+SFX V_c2  ellere  elte/e         vellere
+SFX V_c2   olere  oglio           solere
+SFX V_c2   olere  uoli            solere
+SFX V_c2   olere  uole            solere
+SFX V_c2   olere  ogliamo         solere
+SFX V_c2   olere  ogliono         solere
+SFX V_c2   olere  oglia           solere
+SFX V_c2   olere  ogliate         solere
+SFX V_c2   olere  ogliano         solere
+SFX V_c2   olere  olito/e         solere
+SFX V_c2   olere  olita/e         solere
+SFX V_c2   olere  oliti/e         solere
+SFX V_c2   olere  olite/e         solere
+SFX V_c2   olere  olgo            dolere
+SFX V_c2   olere  uoli/e          dolere
+SFX V_c2   olere  uole            dolere
+SFX V_c2   olere  ogliamo/e       dolere
+SFX V_c2   olere  olgono          dolere
+SFX V_c2   olere  olsi            dolere
+SFX V_c2   olere  olse            dolere
+SFX V_c2   olere  olsero          dolere
+SFX V_c2   olere  orrò         [dv]olere
+SFX V_c2   olere  orrai        [dv]olere
+SFX V_c2   olere  orrà         [dv]olere
+SFX V_c2   olere  orremo       [dv]olere
+SFX V_c2   olere  orrete       [dv]olere
+SFX V_c2   olere  orranno      [dv]olere
+SFX V_c2   olere  orrei        [dv]olere
+SFX V_c2   olere  orresti      [dv]olere
+SFX V_c2   olere  orrebbe      [dv]olere
+SFX V_c2   olere  orremmo      [dv]olere
+SFX V_c2   olere  orreste      [dv]olere
+SFX V_c2   olere  orrebbero    [dv]olere
+SFX V_c2   olere  olga            dolere
+SFX V_c2   olere  oglia           dolere
+SFX V_c2   olere  ogliate         dolere
+SFX V_c2   olere  olgano          dolere
+SFX V_c2   olere  oglio           volere
+SFX V_c2   olere  uoi             volere
+SFX V_c2   olere  uole            volere
+SFX V_c2   olere  ogliamo/e       volere
+SFX V_c2   olere  ogliono         volere
+SFX V_c2   olere  olli            volere
+SFX V_c2   olere  olle            volere
+SFX V_c2   olere  ollero          volere
+SFX V_c2   olere  oglia           volere
+SFX V_c2   olere  ogliate/e       volere
+SFX V_c2   olere  ogliano         volere
+SFX V_c2   olere  ogli/e          volere
+SFX V_c2  olvere  olsi        [sv]olvere
+SFX V_c2  olvere  olse        [sv]olvere
+SFX V_c2  olvere  olsero      [sv]olvere
+SFX V_c2  olvere  olto/e         solvere
+SFX V_c2  olvere  olta/e         solvere
+SFX V_c2  olvere  olti/e         solvere
+SFX V_c2  olvere  olte/e         solvere
+SFX V_c2  olvere  oluto/e     [sv]olvere
+SFX V_c2  olvere  oluta/e     [sv]olvere
+SFX V_c2  olvere  oluti/e     [sv]olvere
+SFX V_c2  olvere  olute/e     [sv]olvere
+SFX V_c2 inquere  inquito/e     linquere
+SFX V_c2 inquere  inquita/e     linquere
+SFX V_c2 inquere  inquiti/e     linquere
+SFX V_c2 inquere  inquite/e     linquere
+SFX V_c2  andere  ansero         pandere
+SFX V_c2  andere  anso/e         pandere
+SFX V_c2  andere  ansa/e         pandere
+SFX V_c2  andere  ansi/e         pandere
+SFX V_c2  andere  anse/e         pandere
+SFX V_c2  andere  anto/e         pandere
+SFX V_c2  andere  anta/e         pandere
+SFX V_c2  andere  anti/e         pandere
+SFX V_c2  andere  ante/e         pandere
+SFX V_c2  endere  esero    [cfprt]endere
+SFX V_c2  endere  eso/e    [cfprt]endere
+SFX V_c2  endere  esa/e    [cfprt]endere
+SFX V_c2  endere  esi/e    [cfprt]endere
+SFX V_c2  endere  ese/e    [cfprt]endere
+SFX V_c2   imere  ensi            dimere
+SFX V_c2   imere  ense            dimere
+SFX V_c2   imere  ensero          dimere
+SFX V_c2   imere  ento/e          dimere
+SFX V_c2   imere  enta/e          dimere
+SFX V_c2   imere  enti/e          dimere
+SFX V_c2   imere  ente/e          dimere
+SFX V_c2   enere  engo            tenere
+SFX V_c2   enere  ieni/e          tenere
+SFX V_c2   enere  iene            tenere
+SFX V_c2   enere  engono          tenere
+SFX V_c2   enere  enni            tenere
+SFX V_c2   enere  enne            tenere
+SFX V_c2   enere  ennero          tenere
+SFX V_c2   enere  errò            tenere
+SFX V_c2   enere  errai           tenere
+SFX V_c2   enere  errà            tenere
+SFX V_c2   enere  erremo          tenere
+SFX V_c2   enere  errete          tenere
+SFX V_c2   enere  erranno         tenere
+SFX V_c2   enere  errei           tenere
+SFX V_c2   enere  erresti         tenere
+SFX V_c2   enere  errebbe         tenere
+SFX V_c2   enere  erremmo         tenere
+SFX V_c2   enere  erreste         tenere
+SFX V_c2   enere  errebbero       tenere
+SFX V_c2   enere  enga            tenere
+SFX V_c2   enere  engano          tenere
+SFX V_c2  incere  insi           vincere
+SFX V_c2  incere  inse           vincere
+SFX V_c2  incere  insero         vincere
+SFX V_c2  incere  into/e         vincere
+SFX V_c2  incere  inta/e         vincere
+SFX V_c2  incere  inti/e         vincere
+SFX V_c2  incere  inte/e         vincere
+SFX V_c2 inguere  insi          tinguere
+SFX V_c2 inguere  inse          tinguere
+SFX V_c2 inguere  insero        tinguere
+SFX V_c2 inguere  into/e        tinguere
+SFX V_c2 inguere  inta/e        tinguere
+SFX V_c2 inguere  inti/e        tinguere
+SFX V_c2 inguere  inte/e        tinguere
+SFX V_c2   umere  unsi            sumere
+SFX V_c2   umere  unse            sumere
+SFX V_c2   umere  unsero          sumere
+SFX V_c2   umere  unto/e          sumere
+SFX V_c2   umere  unta/e          sumere
+SFX V_c2   umere  unti/e          sumere
+SFX V_c2   umere  unte/e          sumere
+SFX V_c2   apere  o               sapere
+SFX V_c2   apere  ai              sapere
+SFX V_c2   apere  a               sapere
+SFX V_c2   apere  appiamo/e       sapere
+SFX V_c2   apere  anno            sapere
+SFX V_c2   apere  eppi            sapere
+SFX V_c2   apere  eppe            sapere
+SFX V_c2   apere  eppero          sapere
+SFX V_c2   apere  aprò            sapere
+SFX V_c2   apere  aprai           sapere
+SFX V_c2   apere  aprà            sapere
+SFX V_c2   apere  apremo          sapere
+SFX V_c2   apere  aprete          sapere
+SFX V_c2   apere  apranno         sapere
+SFX V_c2   apere  aprei           sapere
+SFX V_c2   apere  apresti         sapere
+SFX V_c2   apere  aprebbe         sapere
+SFX V_c2   apere  apremmo         sapere
+SFX V_c2   apere  apreste         sapere
+SFX V_c2   apere  aprebbero       sapere
+SFX V_c2   apere  appia           sapere
+SFX V_c2   apere  appiate/e       sapere
+SFX V_c2   apere  appiano         sapere
+SFX V_c2   apere  appi/e          sapere
+SFX V_c2   apere  apiente/e       sapere
+SFX V_c2   apere  apienti/e       sapere
+SFX V_c2   arere  aio             parere
+SFX V_c2   arere  aiamo/e         parere
+SFX V_c2   arere  aiono           parere
+SFX V_c2   arere  arvi            parere
+SFX V_c2   arere  arve            parere
+SFX V_c2   arere  arvero          parere
+SFX V_c2   arere  arrò            parere
+SFX V_c2   arere  arrai           parere
+SFX V_c2   arere  arrà            parere
+SFX V_c2   arere  arremo          parere
+SFX V_c2   arere  arrete          parere
+SFX V_c2   arere  arranno         parere
+SFX V_c2   arere  arrei           parere
+SFX V_c2   arere  arresti         parere
+SFX V_c2   arere  arrebbe         parere
+SFX V_c2   arere  arremmo         parere
+SFX V_c2   arere  arreste         parere
+SFX V_c2   arere  arrebbero       parere
+SFX V_c2   arere  aia             parere
+SFX V_c2   arere  aiate           parere
+SFX V_c2   arere  aiano           parere
+SFX V_c2   arere  arvente/e       parere
+SFX V_c2   arere  arventi/e       parere
+SFX V_c2   arere  arso/e          parere
+SFX V_c2   arere  arsa/e          parere
+SFX V_c2   arere  arsi/e          parere
+SFX V_c2   arere  arse/e          parere
+SFX V_c2  argere  arso/e        spargere
+SFX V_c2  argere  arsa/e        spargere
+SFX V_c2  argere  arsi/e        spargere
+SFX V_c2  argere  arse/e        spargere
+SFX V_c2  ergere  erso/e    [mptv]ergere
+SFX V_c2  ergere  ersa/e    [mptv]ergere
+SFX V_c2  ergere  ersi/e    [mptv]ergere
+SFX V_c2  ergere  erse/e    [mptv]ergere
+SFX V_c2  ertere  erso/e         vertere
+SFX V_c2  ertere  ersa/e         vertere
+SFX V_c2  ertere  ersi/e         vertere
+SFX V_c2  ertere  erse/e         vertere
+SFX V_c2  orrere  orsero         correre
+SFX V_c2  orrere  orso/e         correre
+SFX V_c2  orrere  orsa/e         correre
+SFX V_c2  orrere  orsi/e         correre
+SFX V_c2  orrere  orse/e         correre
+SFX V_c2  orcere  orsi           torcere
+SFX V_c2  orcere  orse           torcere
+SFX V_c2  orcere  orsero         torcere
+SFX V_c2  orcere  orto/e         torcere
+SFX V_c2  orcere  orta/e         torcere
+SFX V_c2  orcere  orti/e         torcere
+SFX V_c2  orcere  orte/e         torcere
+SFX V_c2  escere  ebbi          crescere
+SFX V_c2  escere  ebbe          crescere
+SFX V_c2  escere  ebbero        crescere
+SFX V_c2  oscere  obbi           noscere
+SFX V_c2  oscere  obbe           noscere
+SFX V_c2  oscere  obbero         noscere
+SFX V_c2   imere  essero         primere
+SFX V_c2   imere  esso/e         primere
+SFX V_c2   imere  essa/e         primere
+SFX V_c2   imere  essi/e         primere
+SFX V_c2   imere  esse/e         primere
+SFX V_c2  ettere  essero      [ln]ettere
+SFX V_c2  ettere  isi            mettere
+SFX V_c2  ettere  ise            mettere
+SFX V_c2  ettere  isero          mettere
+SFX V_c2  ettere  esso/e     [lmn]ettere
+SFX V_c2  ettere  essa/e     [lmn]ettere
+SFX V_c2  ettere  essi/e     [lmn]ettere
+SFX V_c2  ettere  esse/e     [lmn]ettere
+SFX V_c2  indere  issero        scindere
+SFX V_c2  indere  isso/e        scindere
+SFX V_c2  indere  issa/e        scindere
+SFX V_c2  indere  issi/e        scindere
+SFX V_c2  indere  isse/e        scindere
+SFX V_c2   ivere  issi            vivere
+SFX V_c2   ivere  isse            vivere
+SFX V_c2   ivere  issero          vivere
+SFX V_c2   ivere  ivrò            vivere
+SFX V_c2   ivere  ivrai           vivere
+SFX V_c2   ivere  ivrà            vivere
+SFX V_c2   ivere  ivremo          vivere
+SFX V_c2   ivere  ivrete          vivere
+SFX V_c2   ivere  ivranno         vivere
+SFX V_c2   ivere  ivrei           vivere
+SFX V_c2   ivere  ivresti         vivere
+SFX V_c2   ivere  ivrebbe         vivere
+SFX V_c2   ivere  ivremmo         vivere
+SFX V_c2   ivere  ivreste         vivere
+SFX V_c2   ivere  ivrebbero       vivere
+SFX V_c2   ivere  issuto/e        vivere
+SFX V_c2   ivere  issuta/e        vivere
+SFX V_c2   ivere  issuti/e        vivere
+SFX V_c2   ivere  issute/e        vivere
+SFX V_c2  uotere  otere/V        cuotere
+SFX V_c2  uotere  ossero         cuotere
+SFX V_c2  uotere  osso/e         cuotere
+SFX V_c2  uotere  ossa/e         cuotere
+SFX V_c2  uotere  ossi/e         cuotere
+SFX V_c2  uotere  osse/e         cuotere
+SFX V_c2  uotere  usso/e         cuotere
+SFX V_c2  uotere  ussa/e         cuotere
+SFX V_c2  uotere  ussi/e         cuotere
+SFX V_c2  uotere  usse/e         cuotere
+SFX V_c2   utere  ussero          cutere
+SFX V_c2   utere  usso/e          cutere
+SFX V_c2   utere  ussa/e          cutere
+SFX V_c2   utere  ussi/e          cutere
+SFX V_c2   utere  usse/e          cutere
+SFX V_c2   anere  ango            manere
+SFX V_c2   anere  angono          manere
+SFX V_c2   anere  asi             manere
+SFX V_c2   anere  ase             manere
+SFX V_c2   anere  asero           manere
+SFX V_c2   anere  arrò            manere
+SFX V_c2   anere  arrai           manere
+SFX V_c2   anere  arrà            manere
+SFX V_c2   anere  arremo          manere
+SFX V_c2   anere  arrete          manere
+SFX V_c2   anere  arranno         manere
+SFX V_c2   anere  arrei           manere
+SFX V_c2   anere  arresti         manere
+SFX V_c2   anere  arrebbe         manere
+SFX V_c2   anere  arremmo         manere
+SFX V_c2   anere  arreste         manere
+SFX V_c2   anere  arrebbero       manere
+SFX V_c2   anere  anga            manere
+SFX V_c2   anere  angano          manere
+SFX V_c2   anere  asto/e          manere
+SFX V_c2   anere  asta/e          manere
+SFX V_c2   anere  asti/e          manere
+SFX V_c2   anere  aste/e          manere
+SFX V_c2   edere  esto/e        chiedere
+SFX V_c2   edere  esta/e        chiedere
+SFX V_c2   edere  esti/e        chiedere
+SFX V_c2   edere  este/e        chiedere
+SFX V_c2  istere  istito/e       sistere
+SFX V_c2  istere  istita/e       sistere
+SFX V_c2  istere  istiti/e       sistere
+SFX V_c2  istere  istite/e       sistere
+SFX V_c2   edere  idi             vedere
+SFX V_c2   edere  ide             vedere
+SFX V_c2   edere  idero           vedere
+SFX V_c2   edere  edrò            vedere
+SFX V_c2   edere  edrai           vedere
+SFX V_c2   edere  edrà            vedere
+SFX V_c2   edere  edremo          vedere
+SFX V_c2   edere  edrete          vedere
+SFX V_c2   edere  edranno         vedere
+SFX V_c2   edere  edrei           vedere
+SFX V_c2   edere  edresti         vedere
+SFX V_c2   edere  edrebbe         vedere
+SFX V_c2   edere  edremmo         vedere
+SFX V_c2   edere  edreste         vedere
+SFX V_c2   edere  edrebbero       vedere
+SFX V_c2   edere  isto/e          vedere
+SFX V_c2   edere  ista/e          vedere
+SFX V_c2   edere  isti/e          vedere
+SFX V_c2   edere  iste/e          vedere
+SFX V_c2    orre  onere/V          porre
+SFX V_c2   onere  ongo            ponere
+SFX V_c2   onere  ongono          ponere
+SFX V_c2   onere  osi             ponere
+SFX V_c2   onere  ose             ponere
+SFX V_c2   onere  osero           ponere
+SFX V_c2   onere  orrò            ponere
+SFX V_c2   onere  orrai           ponere
+SFX V_c2   onere  orrà            ponere
+SFX V_c2   onere  orremo          ponere
+SFX V_c2   onere  orrete          ponere
+SFX V_c2   onere  orranno         ponere
+SFX V_c2   onere  orrei           ponere
+SFX V_c2   onere  orresti         ponere
+SFX V_c2   onere  orrebbe         ponere
+SFX V_c2   onere  orremmo         ponere
+SFX V_c2   onere  orreste         ponere
+SFX V_c2   onere  orrebbero       ponere
+SFX V_c2   onere  onga            ponere
+SFX V_c2   onere  ongano          ponere
+SFX V_c2   onere  osto/e          ponere
+SFX V_c2   onere  osta/e          ponere
+SFX V_c2   onere  osti/e          ponere
+SFX V_c2   onere  oste/e          ponere
+SFX V_c2  ondere  osero       [cp]ondere
+SFX V_c2  ondere  osi            pondere
+SFX V_c2  ondere  ose            pondere
+SFX V_c2  ondere  oso/e          condere
+SFX V_c2  ondere  osa/e          condere
+SFX V_c2  ondere  osi/e          condere
+SFX V_c2  ondere  ose/e          condere
+SFX V_c2  ondere  osto/e      [cp]ondere
+SFX V_c2  ondere  osta/e      [cp]ondere
+SFX V_c2  ondere  osti/e      [cp]ondere
+SFX V_c2  ondere  oste/e      [cp]ondere
+SFX V_c2  ondere  usero          fondere
+SFX V_c2  ondere  uso/e          fondere
+SFX V_c2  ondere  usa/e          fondere
+SFX V_c2  ondere  usi/e          fondere
+SFX V_c2  ondere  use/e          fondere
+SFX V_c2  undere  usero          tundere
+SFX V_c2  undere  uso/e          tundere
+SFX V_c2  undere  usa/e          tundere
+SFX V_c2  undere  usi/e          tundere
+SFX V_c2  undere  use/e          tundere
+SFX V_c2   urere  ussi            burere
+SFX V_c2   urere  usse            burere
+SFX V_c2   urere  usto/e          burere
+SFX V_c2   urere  usta/e          burere
+SFX V_c2   urere  usti/e          burere
+SFX V_c2   urere  uste/e          burere
+SFX V_c2  ascere  acqui          nascere
+SFX V_c2  ascere  acque          nascere
+SFX V_c2  ascere  acquero        nascere
+SFX V_c2  ascere  ato/e          nascere
+SFX V_c2  ascere  ata/e          nascere
+SFX V_c2  ascere  ati/e          nascere
+SFX V_c2  ascere  ate/e          nascere
+SFX V_c2    arre  aere/V          trarre
+SFX V_c2    aere  aggo            traere
+SFX V_c2    aere  aggono          traere
+SFX V_c2    aere  assi            traere
+SFX V_c2    aere  asse            traere
+SFX V_c2    aere  assero          traere
+SFX V_c2    aere  arrò            traere
+SFX V_c2    aere  arrai           traere
+SFX V_c2    aere  arrà            traere
+SFX V_c2    aere  arremo          traere
+SFX V_c2    aere  arrete          traere
+SFX V_c2    aere  arranno         traere
+SFX V_c2    aere  arrei           traere
+SFX V_c2    aere  arresti         traere
+SFX V_c2    aere  arrebbe         traere
+SFX V_c2    aere  arremmo         traere
+SFX V_c2    aere  arreste         traere
+SFX V_c2    aere  arrebbero       traere
+SFX V_c2    aere  agga            traere
+SFX V_c2    aere  aggano          traere
+SFX V_c2    aere  atto/e          traere
+SFX V_c2    aere  atta/e          traere
+SFX V_c2    aere  atti/e          traere
+SFX V_c2    aere  atte/e          traere
+SFX V_c2   acere  accio           facere
+SFX V_c2   acere  à               facere
+SFX V_c2   acere  acciamo/e       facere
+SFX V_c2   acere  anno            facere
+SFX V_c2   acere  eci             facere
+SFX V_c2   acere  ece             facere
+SFX V_c2   acere  ecero           facere
+SFX V_c2   acere  arò             facere
+SFX V_c2   acere  arai            facere
+SFX V_c2   acere  arà             facere
+SFX V_c2   acere  aremo           facere
+SFX V_c2   acere  arete           facere
+SFX V_c2   acere  aranno          facere
+SFX V_c2   acere  arei            facere
+SFX V_c2   acere  aresti          facere
+SFX V_c2   acere  arebbe          facere
+SFX V_c2   acere  aremmo          facere
+SFX V_c2   acere  areste          facere
+SFX V_c2   acere  arebbero        facere
+SFX V_c2   acere  accia           facere
+SFX V_c2   acere  acciate         facere
+SFX V_c2   acere  acciano         facere
+SFX V_c2   acere  a/E             facere
+SFX V_c2   acere  atto/e          facere
+SFX V_c2   acere  atta/e          facere
+SFX V_c2   acere  atti/e          facere
+SFX V_c2   acere  atte/e          facere
+SFX V_c2   igere  assi            digere
+SFX V_c2   igere  asse            digere
+SFX V_c2   igere  assero          digere
+SFX V_c2   igere  atto/e       [ds]igere
+SFX V_c2   igere  atta/e       [ds]igere
+SFX V_c2   igere  atti/e       [ds]igere
+SFX V_c2   igere  atte/e       [ds]igere
+SFX V_c2   igere  essi         [lr]igere
+SFX V_c2   igere  esse         [lr]igere
+SFX V_c2   igere  essero       [lr]igere
+SFX V_c2   igere  etto/e       [lr]igere
+SFX V_c2   igere  etta/e       [lr]igere
+SFX V_c2   igere  etti/e       [lr]igere
+SFX V_c2   igere  ette/e       [lr]igere
+SFX V_c2  ernere  ernito/e       cernere
+SFX V_c2  ernere  ernita/e       cernere
+SFX V_c2  ernere  erniti/e       cernere
+SFX V_c2  ernere  ernite/e       cernere
+SFX V_c2  ernere reto/e          cernere
+SFX V_c2  ernere reta/e          cernere
+SFX V_c2  ernere reti/e          cernere
+SFX V_c2  ernere rete/e          cernere
+SFX V_c2   icere  i/E             dicere
+SFX V_c2   icere  etto/e          dicere
+SFX V_c2   icere  etta/e          dicere
+SFX V_c2   icere  etti/e          dicere
+SFX V_c2   icere  ette/e          dicere
+SFX V_c2  ingere  etto/e        tringere
+SFX V_c2  ingere  etta/e        tringere
+SFX V_c2  ingere  etti/e        tringere
+SFX V_c2  ingere  ette/e        tringere
+SFX V_c2   ivere  issi          scrivere
+SFX V_c2   ivere  isse          scrivere
+SFX V_c2   ivere  issero        scrivere
+SFX V_c2   ivere  itto/e        scrivere
+SFX V_c2   ivere  itta/e        scrivere
+SFX V_c2   ivere  itti/e        scrivere
+SFX V_c2   ivere  itte/e        scrivere
+SFX V_c2  uovere  overe/V        muovere
+SFX V_c2  uovere  ossero         muovere
+SFX V_c2  uovere  osso/e         muovere
+SFX V_c2  uovere  ossa/e         muovere
+SFX V_c2  uovere  ossi/e         muovere
+SFX V_c2  uovere  osse/e         muovere
+SFX V_c2  uocere  ocere/V        cuocere
+SFX V_c2  uocere  uocio          cuocere
+SFX V_c2  uocere  uociono        cuocere
+SFX V_c2  uocere  ossi           cuocere
+SFX V_c2  uocere  osse           cuocere
+SFX V_c2  uocere  ossero         cuocere
+SFX V_c2  uocere  uocia          cuocere
+SFX V_c2  uocere  uociano        cuocere
+SFX V_c2  uocere  otto/e         cuocere
+SFX V_c2  uocere  otta/e         cuocere
+SFX V_c2  uocere  otti/e         cuocere
+SFX V_c2  uocere  otte/e         cuocere
+SFX V_c2  ompere  uppi           rompere
+SFX V_c2  ompere  uppe           rompere
+SFX V_c2  ompere  uppero         rompere
+SFX V_c2  ompere  otto/e         rompere
+SFX V_c2  ompere  otta/e         rompere
+SFX V_c2  ompere  otti/e         rompere
+SFX V_c2  ompere  otte/e         rompere
+SFX V_c2   otere  osso            potere
+SFX V_c2   otere  uoi             potere
+SFX V_c2   otere  uò              potere
+SFX V_c2   otere  ossiamo/e       potere
+SFX V_c2   otere  ossono          potere
+SFX V_c2   otere  otrò            potere
+SFX V_c2   otere  otrai           potere
+SFX V_c2   otere  otrà            potere
+SFX V_c2   otere  otremo          potere
+SFX V_c2   otere  otrete          potere
+SFX V_c2   otere  otranno         potere
+SFX V_c2   otere  otrei           potere
+SFX V_c2   otere  otresti         potere
+SFX V_c2   otere  otrebbe         potere
+SFX V_c2   otere  otremmo         potere
+SFX V_c2   otere  otreste         potere
+SFX V_c2   otere  otrebbero       potere
+SFX V_c2   otere  ossa/e          potere
+SFX V_c2   otere  ossiate/e       potere
+SFX V_c2   otere  ossano          potere
+SFX V_c2    urre  ucere/V          durre
+SFX V_c2   ucere  ussi            ducere
+SFX V_c2   ucere  usse            ducere
+SFX V_c2   ucere  ussero          ducere
+SFX V_c2   ucere  urrò            ducere
+SFX V_c2   ucere  urrai           ducere
+SFX V_c2   ucere  urrà            ducere
+SFX V_c2   ucere  urremo          ducere
+SFX V_c2   ucere  urrete          ducere
+SFX V_c2   ucere  urranno         ducere
+SFX V_c2   ucere  urrei           ducere
+SFX V_c2   ucere  urresti         ducere
+SFX V_c2   ucere  urrebbe         ducere
+SFX V_c2   ucere  urremmo         ducere
+SFX V_c2   ucere  urreste         ducere
+SFX V_c2   ucere  urrebbero       ducere
+SFX V_c2   ucere  otto/e          ducere
+SFX V_c2   ucere  otta/e          ducere
+SFX V_c2   ucere  otti/e          ducere
+SFX V_c2   ucere  otte/e          ducere
+SFX V_c2     ere  evere/V           bere
+SFX V_c2   evere  evvi            bevere
+SFX V_c2   evere  evve            bevere
+SFX V_c2   evere  evvero          bevere
+SFX V_c2   evere  errò            bevere
+SFX V_c2   evere  errai           bevere
+SFX V_c2   evere  errà            bevere
+SFX V_c2   evere  erremo          bevere
+SFX V_c2   evere  errete          bevere
+SFX V_c2   evere  erranno         bevere
+SFX V_c2   evere  errei           bevere
+SFX V_c2   evere  erresti         bevere
+SFX V_c2   evere  errebbe         bevere
+SFX V_c2   evere  erremmo         bevere
+SFX V_c2   evere  erreste         bevere
+SFX V_c2   evere  errebbero       bevere
+SFX V_c2   overe  evo             dovere
+SFX V_c2   overe  ebbo            dovere
+SFX V_c2   overe  evi             dovere
+SFX V_c2   overe  eve             dovere
+SFX V_c2   overe  obbiamo         dovere
+SFX V_c2   overe  evono           dovere
+SFX V_c2   overe  ebbono          dovere
+SFX V_c2   overe  ovrò            dovere
+SFX V_c2   overe  ovrai           dovere
+SFX V_c2   overe  ovrà            dovere
+SFX V_c2   overe  ovremo          dovere
+SFX V_c2   overe  ovrete          dovere
+SFX V_c2   overe  ovranno         dovere
+SFX V_c2   overe  ovrei           dovere
+SFX V_c2   overe  ovresti         dovere
+SFX V_c2   overe  ovrebbe         dovere
+SFX V_c2   overe  ovremmo         dovere
+SFX V_c2   overe  ovreste         dovere
+SFX V_c2   overe  ovrebbero       dovere
+SFX V_c2   overe  ebba            dovere
+SFX V_c2   overe  eva             dovere
+SFX V_c2   overe  obbiate         dovere
+SFX V_c2   overe  ebbano          dovere
+SFX V_c2   overe  evano           dovere
+SFX V_c2   overe  ovvi           piovere
+SFX V_c2   overe  ovve           piovere
+SFX V_c2   overe  ovvero         piovere
+SFX V_c3     ire  icere/V           dire
+SFX V_c3       e    /e             ire
+SFX V_c3     ire    o      [^cghln]ire
+SFX V_c3     ire    o      [^g][ln]ire
+SFX V_c3     ire isco
+SFX V_c3     ire    i/e    [^cghln]ire
+SFX V_c3     ire    i/e    [^g][ln]ire
+SFX V_c3     ire isci/e
+SFX V_c3     ire    e      [^cghln]ire
+SFX V_c3     ire    e      [^g][ln]ire
+SFX V_c3     ire isce
+SFX V_c3     ire    iamo/e
+SFX V_c3     ire    ite/e
+SFX V_c3     ire    ono    [^cghln]ire
+SFX V_c3     ire    ono    [^g][ln]ire
+SFX V_c3     ire iscono
+SFX V_c3     ire    ivo
+SFX V_c3     ire    ivi
+SFX V_c3     ire    iva
+SFX V_c3     ire    ivamo
+SFX V_c3     ire    ivate
+SFX V_c3     ire    ivano
+SFX V_c3     ire    ii
+SFX V_c3     ire    isti
+SFX V_c3     ire    ì
+SFX V_c3     ire    immo
+SFX V_c3     ire    iste
+SFX V_c3     ire    irono
+SFX V_c3     ire    irò
+SFX V_c3     ire    irai
+SFX V_c3     ire    irà
+SFX V_c3     ire    iremo
+SFX V_c3     ire    irete
+SFX V_c3     ire    iranno
+SFX V_c3     ire    irei
+SFX V_c3     ire    iresti
+SFX V_c3     ire    irebbe
+SFX V_c3     ire    iremmo
+SFX V_c3     ire    ireste
+SFX V_c3     ire    irebbero
+SFX V_c3     ire    a      [^cghln]ire
+SFX V_c3     ire    a      [^g][ln]ire
+SFX V_c3     ire isca
+SFX V_c3     ire    iate
+SFX V_c3     ire    ano    [^cghln]ire
+SFX V_c3     ire    ano    [^g][ln]ire
+SFX V_c3     ire iscano
+SFX V_c3     ire    issi
+SFX V_c3     ire    isse
+SFX V_c3     ire    issimo
+SFX V_c3     ire    issero
+SFX V_c3     ire    ente/e
+SFX V_c3     ire    enti/e
+SFX V_c3     ire    ito/e
+SFX V_c3     ire    ita/e
+SFX V_c3     ire    iti/e
+SFX V_c3   ucire  ucio         [cr]ucire
+SFX V_c3   ucire  uci/e        [cr]ucire
+SFX V_c3   ucire  uce          [cr]ucire
+SFX V_c3   ucire  uciono       [cr]ucire
+SFX V_c3   ucire  ucia         [cr]ucire
+SFX V_c3   ucire  uciano       [cr]ucire
+SFX V_c3   udire  odo              udire
+SFX V_c3   udire  odi/e            udire
+SFX V_c3   udire  ode              udire
+SFX V_c3   udire  odono            udire
+SFX V_c3   udire  udrò             udire
+SFX V_c3   udire  udrai            udire
+SFX V_c3   udire  udrà             udire
+SFX V_c3   udire  udremo           udire
+SFX V_c3   udire  udrete           udire
+SFX V_c3   udire  udranno          udire
+SFX V_c3   udire  udrei            udire
+SFX V_c3   udire  udresti          udire
+SFX V_c3   udire  udrebbe          udire
+SFX V_c3   udire  udremmo          udire
+SFX V_c3   udire  udreste          udire
+SFX V_c3   udire  udrebbero        udire
+SFX V_c3   udire  oda              udire
+SFX V_c3   udire  odano            udire
+SFX V_c3  uggire  uggo           fuggire
+SFX V_c3  uggire  uggi/e         fuggire
+SFX V_c3  uggire  ugge           fuggire
+SFX V_c3  uggire  uggono         fuggire
+SFX V_c3  uggire  ugga           fuggire
+SFX V_c3  uggire  uggano         fuggire
+SFX V_c3  uscire  esco            uscire
+SFX V_c3  uscire  esci/e          uscire
+SFX V_c3  uscire  esce            uscire
+SFX V_c3  uscire  escono          uscire
+SFX V_c3  uscire  esca            uscire
+SFX V_c3  uscire  escano          uscire
+SFX V_c3  ellire  olto/e         pellire
+SFX V_c3  ellire  olta/e         pellire
+SFX V_c3  ellire  olti/e         pellire
+SFX V_c3  ellire  olte/e         pellire
+SFX V_c3   enire  engo            venire
+SFX V_c3   enire  ieni/e          venire
+SFX V_c3   enire  iene            venire
+SFX V_c3   enire  engono          venire
+SFX V_c3   enire  enni            venire
+SFX V_c3   enire  enne            venire
+SFX V_c3   enire  ennero          venire
+SFX V_c3   enire  errò            venire
+SFX V_c3   enire  errai           venire
+SFX V_c3   enire  errà            venire
+SFX V_c3   enire  erremo          venire
+SFX V_c3   enire  errete          venire
+SFX V_c3   enire  erranno         venire
+SFX V_c3   enire  errei           venire
+SFX V_c3   enire  erresti         venire
+SFX V_c3   enire  errebbe         venire
+SFX V_c3   enire  erremmo         venire
+SFX V_c3   enire  erreste         venire
+SFX V_c3   enire  errebbero       venire
+SFX V_c3   enire  enga            venire
+SFX V_c3   enire  engano          venire
+SFX V_c3   enire  enuto/e         venire
+SFX V_c3   enire  enuta/e         venire
+SFX V_c3   enire  enuti/e         venire
+SFX V_c3   enire  enute/e         venire
+SFX V_c3  entire  enziente/e     sentire
+SFX V_c3  entire  enzienti/e     sentire
+SFX V_c3   arire  aio             parire
+SFX V_c3   arire  aiono           parire
+SFX V_c3   arire  arvi            parire
+SFX V_c3   arire  arve            parire
+SFX V_c3   arire  arvero          parire
+SFX V_c3   arire  arsero          parire
+SFX V_c3   arire  arrò            parire
+SFX V_c3   arire  arrai           parire
+SFX V_c3   arire  arrà            parire
+SFX V_c3   arire  arremo          parire
+SFX V_c3   arire  arrete          parire
+SFX V_c3   arire  arranno         parire
+SFX V_c3   arire  arrei           parire
+SFX V_c3   arire  arresti         parire
+SFX V_c3   arire  arrebbe         parire
+SFX V_c3   arire  arremmo         parire
+SFX V_c3   arire  arreste         parire
+SFX V_c3   arire  arrebbero       parire
+SFX V_c3   arire  aia             parire
+SFX V_c3   arire  aiano           parire
+SFX V_c3   arire  arso/e          parire
+SFX V_c3   arire  arsa/e          parire
+SFX V_c3   arire  arsi/e          parire
+SFX V_c3   arire  arse/e          parire
+SFX V_c3  ertire  ersero         vertire
+SFX V_c3  ertire  erso/e         vertire
+SFX V_c3  ertire  ersa/e         vertire
+SFX V_c3  ertire  ersi/e         vertire
+SFX V_c3  ertire  erse/e         vertire
+SFX V_c3   erire  ersi            ferire
+SFX V_c3   erire  erse            ferire
+SFX V_c3   erire  ersero          ferire
+SFX V_c3   erire  erto/e          ferire
+SFX V_c3   erire  erta/e          ferire
+SFX V_c3   erire  erti/e          ferire
+SFX V_c3   erire  erte/e          ferire
+SFX V_c3    rire  ersi      [^s][fp]rire
+SFX V_c3    rire  erse      [^s][fp]rire
+SFX V_c3    rire  ersero    [^s][fp]rire
+SFX V_c3    rire  erto/e    [^s][fp]rire
+SFX V_c3    rire  erta/e    [^s][fp]rire
+SFX V_c3    rire  erti/e    [^s][fp]rire
+SFX V_c3    rire  erte/e    [^s][fp]rire
+SFX V_c3   orire  uoio            morire
+SFX V_c3   orire  uori/e          morire
+SFX V_c3   orire  uore            morire
+SFX V_c3   orire  uoiono          morire
+SFX V_c3   orire  orrò            morire
+SFX V_c3   orire  orrai           morire
+SFX V_c3   orire  orrà            morire
+SFX V_c3   orire  orremo          morire
+SFX V_c3   orire  orrete          morire
+SFX V_c3   orire  orranno         morire
+SFX V_c3   orire  orrei           morire
+SFX V_c3   orire  orresti         morire
+SFX V_c3   orire  orrebbe         morire
+SFX V_c3   orire  orremmo         morire
+SFX V_c3   orire  orreste         morire
+SFX V_c3   orire  orrebbero       morire
+SFX V_c3   orire  uoia            morire
+SFX V_c3   orire  uoiano          morire
+SFX V_c3   orire  orto/e          morire
+SFX V_c3   orire  orta/e          morire
+SFX V_c3   orire  orti/e          morire
+SFX V_c3   orire  orte/e          morire
+SFX V_n    re   mento     [ai]re
+SFX V_n   ere  imento    [^i]ere
+SFX V_n  iere  imento
+SFX V_n    re   zione [^z][ai]re
+SFX V_n   ere  izione   [^iz]ere
+SFX V_n  iere  izione
+SFX V_n  dere   sione   [^n]dere
+SFX V_n  gere   zione   [^g]gere
+SFX V_n ggere   zione
+SFX V_n   rre   zione     trarre
+SFX V_n   rre   zione      durre
+SFX V_n   rre sizione      porre
+SFX V_n   ellere   ulsione    [pv]ellere
+SFX V_n   olvere  oluzione    [sv]olvere
+SFX V_n   andere   ansione       pandere
+SFX V_n   endere   ensione [cfprt]endere
+SFX V_n    imere   enzione     [ds]imere
+SFX V_n    enere   enzione        tenere
+SFX V_n   incere   inzione       vincere
+SFX V_n  inguere   inzione      tinguere
+SFX V_n    umere   unzione        sumere
+SFX V_n   ergere   ersione  [mptv]ergere
+SFX V_n   ertere   ersione       vertere
+SFX V_n   orcere   orsione       torcere
+SFX V_n   orgere urrezione       sorgere
+SFX V_n    edere   essione        cedere
+SFX V_n    imere   essione       primere
+SFX V_n   ettere   essione    [ln]ettere
+SFX V_n   ettere   issione       mettere
+SFX V_n   indere   issione      scindere
+SFX V_n   iggere   issione       figgere
+SFX V_n   uotere   ossione       cuotere
+SFX V_n   uotere   ussione       cuotere
+SFX V_n    utere   ussione        cutere
+SFX V_n    edere    isione        vedere
+SFX V_n   ondere    usione       fondere
+SFX V_n   undere    usione       tundere
+SFX V_n    urere   ustione        burere
+SFX V_n    igere    azione     [ds]igere
+SFX V_n    igere    ezione     [lr]igere
+SFX V_n   ernere   rezione       cernere
+SFX V_n   ingere    izione      tringere
+SFX V_n    ivere    izione      scrivere
+SFX V_n   uovere    ozione       muovere
+SFX V_n   uocere    ozione       cuocere
+SFX V_n   ompere    uzione       rompere
+SFX V_n   eguire  ecuzione       seguire
+SFX V_n    enire   enzione        venire
+SFX V_n   ertire   ersione       vertire
+SFX V_n    erire   erzione        serire
+SFX V_n    erire   estione        gerire
+SFX V_n     uire    uzione      stituire
+SFX V_n     uire    uzione       struire
+SFX V_n     uire    uzione      tribuire
+SFX V_n   are   aggio    [^i]are
+SFX V_n   are   aggio   [^g]iare
+SFX V_n   ing   aggio
+SFX V_n    re    tura     [ai]re
+SFX V_n   ere   itura    [^i]ere
+SFX V_n  iere   itura
+SFX V_n   rre   ttura     trarre
+SFX V_n   rre   ttura      durre
+SFX V_n   rre  situra      porre
+SFX V_n    re    tore     [ai]re
+SFX V_n   ere   itore    [^i]ere
+SFX V_n  iere   itore
+SFX V_n   rre   ttore     trarre
+SFX V_n   rre   ttore      durre
+SFX V_n   rre  sitore      porre
+SFX V_n    re    tora     [ai]re
+SFX V_n   ere   itora    [^i]ere
+SFX V_n  iere   itora
+SFX V_n   rre   ttora     trarre
+SFX V_n   rre   ttora      durre
+SFX V_n   rre  sitora      porre
+SFX V_n    re   trice     [ai]re
+SFX V_n   ere  itrice    [^i]ere
+SFX V_n  iere  itrice
+SFX V_n   rre  ttrice     trarre
+SFX V_n   rre  ttrice      durre
+SFX V_n   rre sitrice      porre
+SFX V_n    re   tario        are
+SFX V_n    re   taria        are
+SFX V_n    re    toio     [ai]re
+SFX V_n   ere   itoio    [^i]ere
+SFX V_n  iere   itoio
+SFX V_n   rre   ttoio     trarre
+SFX V_n   rre   ttoio      durre
+SFX V_n   rre  sitoio      porre
+SFX V_n    re    toia     [ai]re
+SFX V_n   ere   itoia    [^i]ere
+SFX V_n  iere   itoia
+SFX V_n   rre   ttoia     trarre
+SFX V_n   rre   ttoia      durre
+SFX V_n   rre  sitoia      porre
+SFX V_n    re   torio     [ai]re
+SFX V_n   ere  itorio    [^i]ere
+SFX V_n  iere  itorio
+SFX V_n   rre  ttorio     trarre
+SFX V_n   rre  ttorio      durre
+SFX V_n   rre sitorio      porre
+SFX V_n    re   toria     [ai]re
+SFX V_n   ere  itoria    [^i]ere
+SFX V_n  iere  itoria
+SFX V_n   rre  ttoria     trarre
+SFX V_n   rre  ttoria      durre
+SFX V_n   rre sitoria      porre
+SFX V_n   are      io  [^cgi]are
+SFX V_n   are     hio    [cg]are
+SFX V_n  iare      io
+SFX V_n   ere      io    [^i]ere
+SFX V_n  iere      io
+SFX V_n   ire      io
+SFX V_n   are      ia  [^cgi]are
+SFX V_n   are     hia    [cg]are
+SFX V_n  iare      ia
+SFX V_n   ere      ia    [^i]ere
+SFX V_n  iere      ia
+SFX V_n   ire      ia
+SFX V_n   are    eria  [^cgi]are
+SFX V_n   are   heria    [cg]are
+SFX V_n   are    eria  [^cg]iare
+SFX V_n  iare    eria   [cg]iare
+SFX V_n   ere    eria
+SFX V_n   ire    eria
+SFX V_n   are     ino  [^cgi]are
+SFX V_n   are    hino    [cg]are
+SFX V_n  iare     ino
+SFX V_n   ere     ino    [^i]ere
+SFX V_n  iere     ino
+SFX V_n   ire     ino
+SFX V_n   are     ina  [^cgi]are
+SFX V_n   are    hina    [cg]are
+SFX V_n  iare     ina
+SFX V_n   ere     ina    [^i]ere
+SFX V_n  iere     ina
+SFX V_n   ire     ina
+SFX V_n   are     one
+SFX V_n   ere     one   [^cg]ere
+SFX V_n   ere    ione    [cg]ere
+SFX V_n   ire     one  [^cgh]ire
+SFX V_n   ire    ione    [cg]ire
+SFX V_n  hire     one
+SFX V_n   are     ona
+SFX V_n   ere     ona   [^cg]ere
+SFX V_n   ere    iona    [cg]ere
+SFX V_n   ire     ona  [^cgh]ire
+SFX V_n   ire    iona    [cg]ire
+SFX V_n  hire     ona
+SFX V_aj   re   bile    [ai]re
+SFX V_aj  ere  ibile   [^i]ere
+SFX V_aj iere  ibile
+SFX V_aj  are  evole [^cgi]are
+SFX V_aj  are hevole   [cg]are
+SFX V_aj  are  evole [^cg]iare
+SFX V_aj iare  evole  [cg]iare
+SFX V_aj  ere  evole
+SFX V_aj  ire  evole
+
+# enclitics
+SFX e N 42
+SFX e_m 0  mi
+SFX e_m 0  miti
+SFX e_m 0  mici
+SFX e_m 0  micelo
+SFX e_m 0  misi
+SFX e_m 0  melo
+SFX e_m 0  mene
+SFX e_g 0 gli
+SFX e_g 0 gliti
+SFX e_g 0  leti
+SFX e_g 0 glici
+SFX e_g 0  leci
+SFX e_g 0 glicelo
+SFX e_g 0  lecelo
+SFX e_g 0 glisi
+SFX e_g 0 glielo
+SFX e_g 0 gliene
+SFX e_v 0  vi
+SFX e_v 0  viti
+SFX e_v 0  vici
+SFX e_v 0  vicelo
+SFX e_v 0  visi
+SFX e_v 0  velo
+SFX e_v 0  vene
+SFX e_t 0  ti
+SFX e_t 0  tici
+SFX e_t 0  ticelo
+SFX e_t 0  tisi
+SFX e_t 0  telo
+SFX e_t 0  tene
+SFX e_c 0  ci
+SFX e_c 0  cisi
+SFX e_c 0  celo
+SFX e_c 0  cene
+SFX e_s 0  si
+SFX e_s 0  selo
+SFX e_s 0  sene
+SFX e_l 0  lo
+SFX e_l 0  losi
+SFX e_l 0  lasi
+SFX e_l 0  lisi
+SFX e_l 0  lesi
+
+SFX E N 22
+SFX E_m 0 mmi
+SFX E_m 0 mmiti
+SFX E_m 0 mmici
+SFX E_m 0 mmicelo
+SFX E_m 0 mmisi
+SFX E_m 0 mmelo
+SFX E_m 0 mmene
+SFX E_t 0 tti
+SFX E_t 0 ttici
+SFX E_t 0 tticelo
+SFX E_t 0 ttisi
+SFX E_t 0 ttelo
+SFX E_t 0 ttene
+SFX E_c 0 cci
+SFX E_c 0 ccisi
+SFX E_c 0 ccelo
+SFX E_c 0 ccene
+SFX E_l 0 llo
+SFX E_l 0 llosi
+SFX E_l 0 llasi
+SFX E_l 0 llisi
+SFX E_l 0 llesi
+
+
+# deadjectivals
+SFX A N 77
+SFX Aj_alt o  uzzo    [^u]o
+SFX Aj_alt e  uzzo [^cghu]e
+SFX Aj_alt e iuzzo    [cg]e
+SFX Aj_aj   o   oide
+SFX Aj_aj   e   oide [^cgh]e
+SFX Aj_aj   e  ioide   [cg]e
+SFX Aj_aj   o  astro
+SFX Aj_aj   e  astro [^cgh]e
+SFX Aj_aj   e iastro   [cg]e
+SFX Aj_aj   o  iccio [^cgi]o
+SFX Aj_aj   o hiccio   [cg]o
+SFX Aj_aj  io  iccio
+SFX Aj_aj   e  iccio   [^i]e
+SFX Aj_aj  ie  iccio
+SFX Aj_aj ico istico
+SFX Aj_sup  o  issimo  [^cgi]o
+SFX Aj_sup  o hissimo    [cg]o
+SFX Aj_sup io  issimo
+SFX Aj_sup  e  issimo    [^i]e
+SFX Aj_sup ie  issimo
+SFX Aj_sup  o  errimo [^cgei]o
+SFX Aj_sup  o herrimo    [cg]o
+SFX Aj_sup eo  errimo
+SFX Aj_sup  o  errimo  [^cg]io
+SFX Aj_sup io  errimo   [cg]io
+SFX Aj_sup  e  errimo
+SFX Aj_n  o   ezza   [itv]o
+SFX Aj_n  o   ezza      ido
+SFX Aj_n  e   ezza    evole
+SFX Aj_n  o    età       io
+SFX Aj_n  e    ità   [ao]ce
+SFX Aj_n  o    ità      ano
+SFX Aj_n  e    ità      are
+SFX Aj_n  e   ietà      are
+SFX Aj_n  o    ità   [euv]o
+SFX Aj_n  e    ità    forme
+SFX Aj_n  e    ità  [aiu]le
+SFX Aj_n  o    ità  i[cdn]o
+SFX Aj_n  o    ità      oso
+SFX Aj_n  o    ità      zzo
+SFX Aj_n  o    ità     erno
+SFX Aj_n  o   hità     ingo
+SFX Aj_n  o    ità      ulo
+SFX Aj_n  e     ia   [ao]ce
+SFX Aj_n  o     ia   cefalo
+SFX Aj_n te    zia    crate
+SFX Aj_n  o     ia cro[mn]o
+SFX Aj_n  o     ia    dosso
+SFX Aj_n  o     ia     fago
+SFX Aj_n  o     ia     filo
+SFX Aj_n  o     ia fo[bnr]o
+SFX Aj_n  o     ia     gamo
+SFX Aj_n  o     ia  g[ei]no
+SFX Aj_n  o     ia    grafo
+SFX Aj_n  o     ia     logo
+SFX Aj_n  e     ia     mane
+SFX Aj_n  o     ia     nimo
+SFX Aj_n  o     ia     tono
+SFX Aj_n te     za      nte
+SFX Aj_n  o aggine      ato
+SFX Aj_n  o aggine      oso
+SFX Aj_n  e aggine      one
+SFX Aj_n  o  esimo      ano
+SFX Aj_v      o  eggiare [^cgei]o
+SFX Aj_v      o heggiare    [cg]o
+SFX Aj_v     eo  eggiare
+SFX Aj_v      o  eggiare  [^cg]io
+SFX Aj_v     io  eggiare   [cg]io
+SFX Aj_v      e  eggiare
+SFX Aj_v    ico  ificare
+SFX Aj_v    ico   izzare
+SFX Aj_v istico   izzare
+SFX Aj_av o  amente
+SFX Aj_av e  emente
+SFX Aj_av o   mente [aeiou][lr]o
+SFX Aj_av e   mente [aeiou][lr]e
+SFX Aj_av o  emente        lento
+# SFX Aj_n  e   ista      ale
+# SFX Aj_n  e   ista      are
+# SFX Aj_n  o   eria      ato
+# SFX Aj_n  o   eria      oso
+# SFX Aj_n  e   eria      one
+
+
+# verbs
+PFX v N 1
+PFX v    0       de
+
+# other categories
+PFX o N 151
+PFX oth  0       a      [^a]
+PFX oth  0       an     a
+PFX oth  0       anti
+PFX oth  0       ant    i
+PFX oth   pro    anti
+PFX oth   pro    ant    proi
+PFX oth   pr     anti   pro
+PFX oth   post   anti
+PFX oth   post   ant    posti
+PFX oth   pos    anti   pos[^aeioust]
+PFX oth   pos    anti   poss[aeiou]
+PFX oth   pos    anti   post[^t]
+PFX oth  0       arci
+PFX oth  0       arc    i
+PFX oth   tachi  brachi
+PFX oth   tach   brachi tachi
+PFX oth   tachi  bradi
+PFX oth   tach   bradi  tachi
+PFX oth  0       cis    [^s]
+PFX oth  0       ci     s
+PFX oth   trans  cis
+PFX oth   omo    etero
+PFX oth  0       extra
+PFX oth  0       extr   [aeiou]
+PFX oth   intr   extr
+PFX oth   intra  extr   intra[aeiou]
+PFX oth   intr   extra
+PFX oth  0       in     [^blmprs]
+PFX oth  0       im     [bmp]
+PFX oth  0       il     l
+PFX oth  0       ir     r
+PFX oth  0       in     s[aeiou]
+PFX oth  0       i      s[^aeiou]
+PFX oth  0       infra
+PFX oth  0       infr   [aeiou]
+PFX oth   ultr   infr
+PFX oth   ultra  infr   ultra[aeiou]
+PFX oth   ultr   infra
+PFX oth  0       intra
+PFX oth  0       intr   [aeiou]
+PFX oth   extr   intr
+PFX oth   extra  intr   extra[aeiou]
+PFX oth   extr   intra
+PFX oth  0       iper
+PFX oth   ipo    iper
+PFX oth   ip     iper   ipo
+PFX oth  0       ipo
+PFX oth  0       ip     o
+PFX oth   iper   ipo
+PFX oth   iper   ip     ipero
+PFX oth  0       macro
+PFX oth  0       macr   [aeiou]
+PFX oth   micr   macr
+PFX oth   micro  macr   micro[aeiou]
+PFX oth   micr   macro
+PFX oth  0       maxi
+PFX oth   mini   maxi
+PFX oth  0       mega
+PFX oth  0       meg    [aou]
+PFX oth   mini   mega
+PFX oth   mini   meg    mini[aou]
+PFX oth  0       meta
+PFX oth  0       met    [aeiou]
+PFX oth  0       micro
+PFX oth  0       micr   [aeiou]
+PFX oth   macr   micr
+PFX oth   macro  micr   macro[aeiou]
+PFX oth   macr   micro
+PFX oth  0       mini
+PFX oth   mega   mini
+PFX oth   meg    mini   meg[aou]
+PFX oth   maxi   mini
+PFX oth   multi  mono
+PFX oth   multi  mon    multi[aeiou]
+PFX oth   mult   mono   multi
+PFX oth   mult   mon    multi
+PFX oth   pluri  mono
+PFX oth   pluri  mon    pluri[aeiou]
+PFX oth   plur   mono   pluri
+PFX oth   plur   mon    pluri
+PFX oth   poli   mono
+PFX oth   poli   mon    poli[aeiou]
+PFX oth   pol    mono   poli
+PFX oth   pol    mon    poli
+PFX oth  0       multi
+PFX oth  0       mult   i
+PFX oth   mono   multi
+PFX oth   mono   mult   monoi
+PFX oth   mon    multi  mon[aeiou]
+PFX oth   mon    mult   moni
+PFX oth   uni    multi
+PFX oth   un     multi  uni
+PFX oth  0       neo
+PFX oth  0       ne     o
+PFX oth   ex     neo
+PFX oth  0       oltre
+PFX oth  0       oltr   e
+PFX oth   etero  omo
+PFX oth  0       para
+PFX oth  0       par    [aeiou]
+PFX oth  0       pluri
+PFX oth  0       plur   i
+PFX oth   mono   pluri
+PFX oth   mono   plur   monoi
+PFX oth   mon    pluri  mon[aeiou]
+PFX oth   mon    plur   moni
+PFX oth   uni    pluri
+PFX oth   un     pluri  uni
+PFX oth  0       poli
+PFX oth  0       pol    i
+PFX oth   mono   poli
+PFX oth   mono   pol    monoi
+PFX oth   mon    poli   mon[aeiou]
+PFX oth   mon    pol    moni
+PFX oth   uni    poli
+PFX oth   un     poli   uni
+PFX oth   anti   post
+PFX oth   anti   pos    anti[^aeious]
+PFX oth   anti   pos    antis[aeiou]
+PFX oth   ant    post   anti
+PFX oth  0       pro
+PFX oth  0       pr     o
+PFX oth   anti   pro
+PFX oth   anti   pr     antio
+PFX oth   ant    pro    anti
+PFX oth   anti   retro
+PFX oth   anti   retr   anti[aeiou]
+PFX oth   ant    retro  anti
+PFX oth   ant    retr   anti
+PFX oth  0       semi
+PFX oth  0       sem    i
+PFX oth   brachi tachi
+PFX oth   brach  tachi  brachi
+PFX oth   bradi  tachi
+PFX oth   brad   tachi  bradi
+PFX oth  0       trans  [^s]
+PFX oth  0       tran   s
+PFX oth   cis    trans
+PFX oth  0       ultra
+PFX oth  0       ultr   [aeiou]
+PFX oth   infr   ultr
+PFX oth   infra  ultr   infra[aeiou]
+PFX oth   infr   ultra
+PFX oth   multi  uni
+PFX oth   mult   uni    multi
+PFX oth   pluri  uni
+PFX oth   plur   uni    pluri
+PFX oth   poli   uni
+PFX oth   pol    uni    poli
+PFX oth  0       vice
+PFX oth  0       vic    e
+# PFX oth  0       ex
+# PFX oth   neo    ex
+# PFX oth   ne     ex     neo
+# PFX oth  0       non
+
+# all categories
+PFX a N 182
+PFX all  0       auto
+PFX all  0       aut    [aeiou]
+PFX all  0       co
+PFX all  0       contro
+PFX all  0       contr  [aeiou]
+PFX all  0       dis    [^s]
+PFX all  0       di     s[^aeiou]
+PFX all  0       inter
+PFX all  0       post
+PFX all  0       pos    [^aeious]
+PFX all  0       pos    s[aeiou]
+PFX all   pre    post
+PFX all   pre    pos    pre[^aeious]
+PFX all   pre    pos    pres[aeiou]
+PFX all   pr     post   pre
+PFX all  0       pre
+PFX all  0       pr     e
+PFX all   post   pre
+PFX all   post   pr     poste
+PFX all   pos    pre    pos[^aeioust]
+PFX all   pos    pre    poss[aeiou]
+PFX all   pos    pre    post[^t]
+PFX all  0       ri     [^i]
+PFX all  0       re
+PFX all  0       r      [aeiou]
+PFX all  0       retro
+PFX all  0       retr   [aeiou]
+PFX all  0       s      [^aeiougsz]
+PFX all  0       s      g[^ln]
+PFX all  0       sopra
+PFX all  0       sopr   [aeiou]
+PFX all  0       soprab b
+PFX all  0       soprac c
+PFX all  0       soprad d
+PFX all  0       sopraf f
+PFX all  0       soprag g
+PFX all  0       sopral l
+PFX all  0       sopram m
+PFX all  0       sopran n
+PFX all  0       soprap p
+PFX all  0       soprar r
+PFX all  0       sopras s[aeiou]
+PFX all  0       soprat t
+PFX all  0       soprav v
+PFX all  0       sopraz z
+PFX all   sotto  sopra
+PFX all   sott   sopr
+PFX all   sotto  sopr   sotto[aeiou]
+PFX all   sott   sopra
+PFX all   sotto  soprab sottob
+PFX all   sotto  soprac sottoc
+PFX all   sotto  soprad sottod
+PFX all   sotto  sopraf sottof
+PFX all   sotto  soprag sottog
+PFX all   sotto  sopral sottol
+PFX all   sotto  sopram sottom
+PFX all   sotto  sopran sotton
+PFX all   sotto  soprap sottop
+PFX all   sotto  soprar sottor
+PFX all   sotto  sopras sottos[aeiou]
+PFX all   sotto  soprat sottot
+PFX all   sotto  soprav sottov
+PFX all   sotto  sopraz sottoz
+PFX all   sub    sopra
+PFX all   sub    sopr   sub[aeiou]
+PFX all  0       sovra
+PFX all  0       sovr   [aeiou]
+PFX all  0       sovrab b
+PFX all  0       sovrac c
+PFX all  0       sovrad d
+PFX all  0       sovraf f
+PFX all  0       sovrag g
+PFX all  0       sovral l
+PFX all  0       sovram m
+PFX all  0       sovran n
+PFX all  0       sovrap p
+PFX all  0       sovrar r
+PFX all  0       sovras s[aeiou]
+PFX all  0       sovrat t
+PFX all  0       sovrav v
+PFX all  0       sovraz z
+PFX all   sotto  sovra
+PFX all   sott   sovr
+PFX all   sotto  sovr   sotto[aeiou]
+PFX all   sott   sovra
+PFX all   sotto  sovrab sottob
+PFX all   sotto  sovrac sottoc
+PFX all   sotto  sovrad sottod
+PFX all   sotto  sovraf sottof
+PFX all   sotto  sovrag sottog
+PFX all   sotto  sovral sottol
+PFX all   sotto  sovram sottom
+PFX all   sotto  sovran sotton
+PFX all   sotto  sovrap sottop
+PFX all   sotto  sovrar sottor
+PFX all   sotto  sovras sottos[aeiou]
+PFX all   sotto  sovrat sottot
+PFX all   sotto  sovrav sottov
+PFX all   sotto  sovraz sottoz
+PFX all   sub    sovra
+PFX all   sub    sovr   sub[aeiou]
+PFX all  0       sotto
+PFX all  0       sott   [aeiou]
+PFX all   sopra  sotto
+PFX all   sopr   sott
+PFX all   sopra  sott   sopra[aeiou]
+PFX all   sopr   sotto
+PFX all   soprab sotto  soprabb
+PFX all   soprac sotto  sopracc
+PFX all   soprad sotto  sopradd
+PFX all   sopraf sotto  sopraff
+PFX all   soprag sotto  sopragg
+PFX all   sopral sotto  soprall
+PFX all   sopram sotto  sopramm
+PFX all   sopran sotto  soprann
+PFX all   soprap sotto  soprapp
+PFX all   soprar sotto  soprarr
+PFX all   sopras sotto  soprass
+PFX all   soprat sotto  sopratt
+PFX all   soprav sotto  sopravv
+PFX all   sopraz sotto  soprazz
+PFX all   sovra  sotto
+PFX all   sovr   sott
+PFX all   sovra  sott   sovra[aeiou]
+PFX all   sovr   sotto
+PFX all   sovrab sotto  sovrabb
+PFX all   sovrac sotto  sovracc
+PFX all   sovrad sotto  sovradd
+PFX all   sovraf sotto  sovraff
+PFX all   sovrag sotto  sovragg
+PFX all   sovral sotto  sovrall
+PFX all   sovram sotto  sovramm
+PFX all   sovran sotto  sovrann
+PFX all   sovrap sotto  sovrapp
+PFX all   sovrar sotto  sovrarr
+PFX all   sovras sotto  sovrass
+PFX all   sovrat sotto  sovratt
+PFX all   sovrav sotto  sovravv
+PFX all   sovraz sotto  sovrazz
+PFX all   super  sotto
+PFX all   super  sott   super[aeiou]
+PFX all  0       stra
+PFX all  0       str    a
+PFX all  0       sub
+PFX all   sopra  sub
+PFX all   sopr   sub
+PFX all   soprab sub    soprabb
+PFX all   soprac sub    sopracc
+PFX all   soprad sub    sopradd
+PFX all   sopraf sub    sopraff
+PFX all   soprag sub    sopragg
+PFX all   sopral sub    soprall
+PFX all   sopram sub    sopramm
+PFX all   sopran sub    soprann
+PFX all   soprap sub    soprapp
+PFX all   soprar sub    soprarr
+PFX all   sopras sub    soprass
+PFX all   soprat sub    sopratt
+PFX all   soprav sub    sopravv
+PFX all   sopraz sub    soprazz
+PFX all   sovra  sub
+PFX all   sovr   sub
+PFX all   sovrab sub    sovrabb
+PFX all   sovrac sub    sovracc
+PFX all   sovrad sub    sovradd
+PFX all   sovraf sub    sovraff
+PFX all   sovrag sub    sovragg
+PFX all   sovral sub    sovrall
+PFX all   sovram sub    sovramm
+PFX all   sovran sub    sovrann
+PFX all   sovrap sub    sovrapp
+PFX all   sovrar sub    sovrarr
+PFX all   sovras sub    sovrass
+PFX all   sovrat sub    sovratt
+PFX all   sovrav sub    sovravv
+PFX all   sovraz sub    sovrazz
+PFX all   super  sub
+PFX all  0       super
+PFX all   sotto  super
+PFX all   sott   super
+PFX all   sub    super
+PFX all  0       sur
