@@ -9,7 +9,7 @@ The file `AnagramSolver.cs` is the source code of an exhaustive, signature-based
 
 However, these are only intended to be accessible through client code, for the time being.
 
-# Dictionary
+# Italian dictionary / Lista di parole italiane
 
 The file `dictionary.txt` is a list of Italian words obtained from four different sources:
 - [A previous private effort][1].
