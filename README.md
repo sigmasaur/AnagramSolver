@@ -4,7 +4,7 @@ The file `AnagramSolver.cs` is the source code of an exhaustive, signature-based
 
 **Usage**. As a console application, the solver expects a dictionary file path as its first and only command-line argument. Once an internal index has been built, you can start feeding the solver through the standard input with phrases to be anagrammed. In order to prune the search space a bit, the solving function can be parametrized by the following:
 
-* Minimum length of each word making up an anagram.
+* Minimum length of each word making up an anagram;
 * Maximum number of words making up an anagram.
 
 However, these are only intended to be accessible through client code, for the time being.
@@ -77,7 +77,7 @@ if (!app.CheckSpelling(word, MainDictionary : ita,
 app.Quit(false);
 ```
 
-**Note**. You'll also have to reference the following assemblies (version numbers might vary):
+**Remark**. You'll also have to reference the following assemblies (version numbers might vary):
 
 ```
 C:\Windows\assembly\GAC_MSIL\Microsoft.Office.Interop.Word\15.0.0.0__71e9bce111e9429c\Microsoft.Office.Interop.Word.dll
@@ -110,11 +110,11 @@ while (<b>u</b> ≠ ∅)
 
 At the end, one last iteration was performed with application of the plural `P` and truncation `T` rules to all words of **`D`**. Barring the first and last ones, a total of 5 iterations were needed to reach the fix-point, meaning that **`D`** contains generated words up to five-fold derived.
 
-**Example**. One of the longest words of **`D`** is the 30-character-long generated word `intercompartimentalissimamente`, which can be viewed as derived four times as per `inter-compartimento-ale-issimo-amente` from the established word `compartimento` (the derivation `con-partire` is unproductive) although it should be noted that `intercompartimentale` was already established as a word.
+**Example**. One of the longest words of **`D`** is the 30-character-long generated word `intercompartimentalissimamente`, which can be viewed as four-fold derived as per `inter-compartimento-ale-issimo-amente` from the established word `compartimento` (the derivation `con-partire` is unproductive) although it should be noted that `intercompartimentale` was already established as a word.
 
 The whole computation lasted some 8 days on an i5-2500K @3.30GHz and a single thread, as Office interop tends to misbehave when multi-threading is involved; see also
 [this](https://social.msdn.microsoft.com/Forums/vstudio/en-US/a4775ced-fa6d-44bf-b039-5bc72188e823/is-applicationclass-thread-safe). The final result is a nice 4-million-words dictionary, which I consider an improvement over the above sources. (Note, however, that a few legitimate words from the sources may be missing due to the checking phase.)
 
-# Further notes
+# Contacts and further work
 
-If you like the **`D`** and wish to contribute or just have a question, you can contact me directly through [Discord](https://discord.com/users/638007218670796832/) or leave a comment on the [discussions](https://github.com/sigmasaur/AnagramSolver/discussions/) here. Possible ways of improving the list, other than polishing, include decorating each word with the grammatical category and a pointer to the base word if derived, but I'm open to suggestions.
+If you like the **`D`** and wish to contribute or just have a question, you can contact me on [Discord](https://discordapp.com/users/638007218670796832/) or leave a comment on the [discussions](https://github.com/sigmasaur/AnagramSolver/discussions/) here. Possible ways of improving the list, other than polishing, include decorating each word with the grammatical category and a pointer to the base word if derived, but I'm open to suggestions.
