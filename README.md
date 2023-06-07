@@ -117,4 +117,4 @@ The whole computation lasted some 8 days on an i5-2500K @3.30GHz and a single th
 
 # Contacts and further work
 
-If you like the **`D`** and wish to contribute or just have a question, you can contact me on [Discord](https://discordapp.com/users/638007218670796832/) or leave a comment on the [discussions](https://github.com/sigmasaur/AnagramSolver/discussions/) here. Possible ways of improving the list, other than polishing, include decorating each word with the grammatical category and a pointer to the base word if derived, but I'm open to suggestions.
+If you like the **`D`** and wish to contribute or just have a question, you can DM me on Discord @giofrida#2060 or leave a comment on the [discussions](https://github.com/sigmasaur/AnagramSolver/discussions/) here. Possible ways of improving the list, other than polishing, include decorating each word with the grammatical category and a pointer to the base word if derived, but I'm open to suggestions.
